@@ -92,7 +92,6 @@ class Backend {
 				)
 			);
 		}
-
 	}
 
 	public function add_tab( $settings_tabs ) {

@@ -2,7 +2,7 @@
 
 namespace QuadLayers\WOOCCM\Model;
 
-use QuadLayers\WOOCCM\Model\Field as Field;
+use QuadLayers\WOOCCM\Model\Field;
 
 if ( ! class_exists( 'Field_Billing' ) ) {
 

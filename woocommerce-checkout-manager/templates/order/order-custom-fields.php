@@ -1,5 +1,5 @@
 <?php
-use QuadLayers\WOOCCM\Plugin as Plugin;
+use QuadLayers\WOOCCM\Plugin;
 $title = get_option( 'wooccm_order_custom_fields_title', esc_html__( 'Order extra', 'woocommerce-checkout-manager' ) );
 
 ?>

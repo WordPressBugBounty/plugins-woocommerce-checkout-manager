@@ -2,7 +2,7 @@
 
 namespace QuadLayers\WOOCCM\Controller;
 
-use QuadLayers\WOOCCM\Plugin as Plugin;
+use QuadLayers\WOOCCM\Plugin;
 
 /**
  * Checkout Class
@@ -123,20 +123,20 @@ class Checkout {
 
 		if ( get_option( 'wooccm_checkout_force_create_account', 'no' ) === 'yes' ) {
 			?>
-	  <style>
+		<style>
 		div.create-account {
-		  display: block !important;
+			display: block !important;
 		}
 
 		p.create-account {
-		  display: none !important;
+			display: none !important;
 		}
-	  </style>
-	  <script>
+		</style>
+		<script>
 		jQuery(document).ready(function(e) {
-		  jQuery("input#createaccount").prop('checked', 'checked');
+			jQuery("input#createaccount").prop('checked', 'checked');
 		});
-	  </script>
+		</script>
 			<?php
 		}
 	}

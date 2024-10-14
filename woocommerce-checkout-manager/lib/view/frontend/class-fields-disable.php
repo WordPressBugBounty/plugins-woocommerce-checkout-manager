@@ -46,7 +46,7 @@ class Fields_Disable {
 		if ( 'state' == $field['type'] && true != $field['required'] ) {
 			$field['disabled'] = false;
 			$field['required'] = false;
-			$field['class'] = array( 'wooccm-type-hidden' );
+			$field['class']    = array( 'wooccm-type-hidden' );
 		} elseif ( 'state' == $field['type'] && true == $field['required'] ) {
 
 			$is_woocommerce_process_checkout_nonce = isset( $_POST['woocommerce-process-checkout-nonce'] ) && wp_verify_nonce( wc_clean( wp_unslash( $_POST['woocommerce-process-checkout-nonce'] ) ), 'woocommerce-process_checkout' );

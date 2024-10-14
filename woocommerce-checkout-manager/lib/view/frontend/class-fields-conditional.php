@@ -2,7 +2,7 @@
 
 namespace QuadLayers\WOOCCM\View\Frontend;
 
-use QuadLayers\WOOCCM\Helpers as Helpers;
+use QuadLayers\WOOCCM\Helpers;
 
 /**
  * Fields_Conditional Class

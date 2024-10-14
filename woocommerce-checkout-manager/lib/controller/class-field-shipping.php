@@ -2,8 +2,8 @@
 
 namespace QuadLayers\WOOCCM\Controller;
 
-use QuadLayers\WOOCCM\Controller\Field as Field;
-use QuadLayers\WOOCCM\Plugin as Plugin;
+use QuadLayers\WOOCCM\Controller\Field;
+use QuadLayers\WOOCCM\Plugin;
 use QuadLayers\WOOCCM\Model\Field_Shipping as Field_Shipping_Model;
 
 /**

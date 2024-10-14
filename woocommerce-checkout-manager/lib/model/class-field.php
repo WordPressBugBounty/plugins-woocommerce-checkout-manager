@@ -2,8 +2,8 @@
 
 namespace QuadLayers\WOOCCM\Model;
 
-use QuadLayers\WOOCCM\Model\Model as Model;
-use QuadLayers\WOOCCM\Helpers as Helpers;
+use QuadLayers\WOOCCM\Model\Model;
+use QuadLayers\WOOCCM\Helpers;
 
 /**
  * Field Class
@@ -282,7 +282,7 @@ class Field extends Model {
 				$field['name'] = str_replace( $prefix, '', $key );
 
 				$fields[ $i ] = $field;
-				$i++;
+				++$i;
 			}
 		}
 

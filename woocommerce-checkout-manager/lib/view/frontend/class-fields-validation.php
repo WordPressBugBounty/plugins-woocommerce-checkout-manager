@@ -2,7 +2,7 @@
 
 namespace QuadLayers\WOOCCM\View\Frontend;
 
-use QuadLayers\WOOCCM\Plugin as Plugin;
+use QuadLayers\WOOCCM\Plugin;
 
 /**
  * Fields_Validation Class
@@ -38,7 +38,6 @@ class Fields_Validation {
 		foreach ( $additional_fields as $key => $field ) {
 			$this->validate_field( $key, $field );
 		}
-
 	}
 
 	private function validate_field( $key, $field ) {
@@ -80,7 +79,6 @@ class Fields_Validation {
 			wc_add_notice( sprintf( esc_html__( '%1$s requires at least %2$s characters', 'woocommerce-checkout-manager' ), $field['label'], $field['minlength'] ), 'error' );
 		}
 		// phpcs:enable WordPress.Security.NonceVerification.Missing
-
 	}
 
 	public static function instance() {

@@ -3,7 +3,7 @@
 namespace QuadLayers\WOOCCM\View\Frontend;
 
 use PHP_CodeSniffer\Standards\PSR12\Sniffs\Classes\ClosingBraceSniff;
-use QuadLayers\WOOCCM\Plugin as Plugin;
+use QuadLayers\WOOCCM\Plugin;
 
 /**
  * Fields_I18n Class

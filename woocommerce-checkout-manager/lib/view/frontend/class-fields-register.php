@@ -2,7 +2,7 @@
 
 namespace QuadLayers\WOOCCM\View\Frontend;
 
-use QuadLayers\WOOCCM\Plugin as Plugin;
+use QuadLayers\WOOCCM\Plugin;
 
 /**
  * Fields_Register Class
@@ -121,7 +121,7 @@ class Fields_Register {
 	}
 
 	/*
-	 public function add_my_account_fields( $defaults, $load_address ) {
+	public function add_my_account_fields( $defaults, $load_address ) {
 
 		if ( isset( WOOCCM()->$load_address ) ) {
 
@@ -190,4 +190,3 @@ class Fields_Register {
 		return $frontend_fields;
 	}
 }
-

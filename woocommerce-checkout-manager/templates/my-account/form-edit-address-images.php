@@ -23,10 +23,10 @@ $title = get_option( 'wooccm_order_upload_files_title', esc_html__( 'Uploaded fi
 			$attachment_ids_array = array();
 			if ( ! empty( $attachments ) ) :
 				foreach ( $attachments as $key => $attachment ) :
-					$image_attributes = wp_get_attachment_url( $attachment['attachment_id'] );
-					$is_image         = wp_attachment_is_image( $attachment['attachment_id'] );
-					$filename         = basename( $image_attributes );
-					$wp_filetype      = wp_check_filetype( $filename );
+					$image_attributes       = wp_get_attachment_url( $attachment['attachment_id'] );
+					$is_image               = wp_attachment_is_image( $attachment['attachment_id'] );
+					$filename               = basename( $image_attributes );
+					$wp_filetype            = wp_check_filetype( $filename );
 					$attachment_ids_array[] = $attachment['attachment_id'];
 					?>
 					<tr class="image">

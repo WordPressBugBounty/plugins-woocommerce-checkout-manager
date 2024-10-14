@@ -1,5 +1,5 @@
 <?php
-use QuadLayers\WOOCCM\Helpers as Helpers;
+use QuadLayers\WOOCCM\Helpers;
 ?>
 <div class="wooccm_order_attachments_wrapper" class="wc-metaboxes-wrapper">
 	<table cellpadding="0" cellspacing="0" class="wooccm_order_attachments">

@@ -2,7 +2,7 @@
 
 namespace QuadLayers\WOOCCM\Controller;
 
-use QuadLayers\WOOCCM\Plugin as Plugin;
+use QuadLayers\WOOCCM\Plugin;
 
 /**
  * Checkout Class
@@ -19,12 +19,12 @@ class My_Account {
 
 		add_action(
 			'woocommerce_after_edit_address_form_billing',
-			function() {
+			function () {
 				$this->add_upload_files( 'billing' );}
 		);
 		add_action(
 			'woocommerce_after_edit_address_form_shipping',
-			function() {
+			function () {
 				$this->add_upload_files( 'shipping' ); }
 		);
 	}

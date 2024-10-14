@@ -2,10 +2,10 @@
 
 namespace QuadLayers\WOOCCM\Controller;
 
-use QuadLayers\WOOCCM\Controller\Field as Field;
-use QuadLayers\WOOCCM\Plugin as Plugin;
+use QuadLayers\WOOCCM\Controller\Field;
+use QuadLayers\WOOCCM\Plugin;
 use QuadLayers\WOOCCM\Model\Field_Additional as Field_Additional_Model;
-use QuadLayers\WOOCCM\View\Frontend\Fields_Handler as Fields_Handler;
+use QuadLayers\WOOCCM\View\Frontend\Fields_Handler;
 
 /**
  * Field_Additional Class
@@ -101,7 +101,7 @@ class Field_Additional extends Field {
 			$options  = Plugin::instance()->additional->get_option_types();
 			$multiple = Plugin::instance()->additional->get_multiple_types();
 			?>
-			  </div>
+				</div>
 			<style>
 				#order_data .order_data_column {
 				width: 23%;
@@ -202,7 +202,7 @@ class Field_Additional extends Field {
 	public function add_header() {
 		global $current_section;
 		?>
-	  <li><a href="<?php echo esc_url( admin_url( 'admin.php?page=wc-settings&tab=wooccm&section=additional' ) ); ?>" class="<?php echo ( 'additional' == $current_section ? 'current' : '' ); ?>"><?php esc_html_e( 'Additional', 'woocommerce-checkout-manager' ); ?></a> | </li>
+		<li><a href="<?php echo esc_url( admin_url( 'admin.php?page=wc-settings&tab=wooccm&section=additional' ) ); ?>" class="<?php echo ( 'additional' == $current_section ? 'current' : '' ); ?>"><?php esc_html_e( 'Additional', 'woocommerce-checkout-manager' ); ?></a> | </li>
 		<?php
 	}
 

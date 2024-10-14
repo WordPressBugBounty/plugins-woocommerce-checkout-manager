@@ -167,7 +167,5 @@ class Helpers {
 		}
 
 		return self::get_attachment_icon( $attachment_id );
-
 	}
-
 }

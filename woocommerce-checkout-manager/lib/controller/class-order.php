@@ -2,8 +2,8 @@
 
 namespace QuadLayers\WOOCCM\Controller;
 
-use QuadLayers\WOOCCM\Upload as Upload;
-use QuadLayers\WOOCCM\Plugin as Plugin;
+use QuadLayers\WOOCCM\Upload;
+use QuadLayers\WOOCCM\Plugin;
 
 /**
  * Order Class

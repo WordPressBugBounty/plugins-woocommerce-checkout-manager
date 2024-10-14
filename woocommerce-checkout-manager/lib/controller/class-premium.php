@@ -27,7 +27,7 @@ class Premium {
 			esc_html__( 'Premium', 'woocommerce-checkout-manager' ),
 			'manage_woocommerce',
 			WOOCCM_PREFIX,
-			function() {
+			function () {
 				include_once WOOCCM_PLUGIN_DIR . 'lib/view/backend/pages/premium.php';
 			}
 		);

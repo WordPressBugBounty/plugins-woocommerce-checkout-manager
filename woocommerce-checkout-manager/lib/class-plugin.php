@@ -29,7 +29,7 @@ final class Plugin {
 		 */
 		add_action(
 			'woocommerce_init',
-			function() {
+			function () {
 
 			$this->init_session();
 
@@ -56,7 +56,6 @@ final class Plugin {
 			 */
 			add_action( 'admin_footer', array( __CLASS__, 'add_premium_css' ) );
 			do_action( 'wooccm_init' );
-
 			}
 		);
 
@@ -119,7 +118,6 @@ final class Plugin {
 		);
 
 		wp_register_script( 'farbtastic', admin_url( 'js/farbtastic.js' ), array( 'jquery' ), $wp_version );
-
 	}
 
 	public function clear_session() {

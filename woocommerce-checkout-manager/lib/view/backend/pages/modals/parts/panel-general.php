@@ -211,7 +211,7 @@
 			<label><?php esc_html_e( 'Autocomplete attribute', 'woocommerce-checkout-manager' ); ?></label>
 			<select class="select short" name="autocomplete">
 				<?php foreach ( QuadLayers\WOOCCM\Helpers::get_autocomplete_options() as $autocomplete_option ) : ?>
-					<option <# if ( data.autocomplete=='<?php echo esc_attr( $autocomplete_option ); ?>' ) { #>selected="selected"<# } #> value="<?php echo esc_attr( $autocomplete_option ); ?>"><?php echo sprintf( esc_html__( '%s', 'woocommerce-checkout-manager' ), esc_html( $autocomplete_option ) ); ?></option>
+					<option <# if ( data.autocomplete=='<?php echo esc_attr( $autocomplete_option ); ?>' ) { #>selected="selected"<# } #> value="<?php echo esc_attr( $autocomplete_option ); ?>"><?php printf( esc_html__( '%s', 'woocommerce-checkout-manager' ), esc_html( $autocomplete_option ) ); ?></option>
 				<?php endforeach; ?>
 			</select>
 			<span class="description"><a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete">HTML autocomplete attribute</a>.</span>
