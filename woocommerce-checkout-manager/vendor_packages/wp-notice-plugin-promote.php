@@ -15,7 +15,7 @@ if ( class_exists( 'QuadLayers\\WP_Notice_Plugin_Promote\\Load' ) ) {
 	define( 'WOOCCM_PROMOTE_PREMIUM_SELL_SLUG', 'woocommerce-checkout-manager-pro' );
 	define( 'WOOCCM_PROMOTE_PREMIUM_SELL_NAME', 'WooCommerce Checkout Manager PRO' );
 	define( 'WOOCCM_PROMOTE_PREMIUM_SELL_URL', WOOCCM_PREMIUM_SELL_URL );
-	define( 'WOOCCM_PROMOTE_PREMIUM_INSTALL_URL', 'https://quadlayers.com/product/woocommerce-checkout-manager/?utm_source=wooccm_admin' );
+	define( 'WOOCCM_PROMOTE_PREMIUM_INSTALL_URL', 'https://quadlayers.com/products/woocommerce-checkout-manager/?utm_source=wooccm_admin' );
 	/**
 	 * Notice cross sell 1
 	 */
