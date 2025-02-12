@@ -191,7 +191,12 @@ class Order extends Upload {
 	}
 
 	public function add_metabox_content( $post ) {
-		$order = wc_get_order( $post->get_id() );
+		$order = null;
+		if ( method_exists( $post, 'get_id' ) ) {
+			$order = wc_get_order( $post->get_id() );
+		} else {
+			$order = wc_get_order( $post->ID );
+		}
 		if ( $order ) {
 
 			$attachments = get_posts(

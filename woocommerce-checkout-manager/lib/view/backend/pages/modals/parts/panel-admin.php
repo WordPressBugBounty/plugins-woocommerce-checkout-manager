@@ -9,7 +9,7 @@
 		</p>
 		<p class="form-field">
 		<label><?php esc_html_e( 'Sortable', 'woocommerce-checkout-manager' ); ?></label>
-		<input <# if ( data.sortable ) { #>checked="checked"<# } #> type="checkbox" name="sortable" value="1">
+		<input <# if ( data.sortable ) { #>checked="checked"<# } #> type="checkbox" name="sortable" value="1" <# if ( ! data.name.includes('wooccm') ) { #>disabled="disabled"<# } #>>
 			<span class="description hidden"><?php esc_html_e( 'Allow Sorting on View Orders screen', 'woocommerce-checkout-manager' ); ?></span>
 			<span class="description premium">(<?php esc_html_e( 'This is a premium feature', 'woocommerce-checkout-manager' ); ?>)</span>
 		</p>
