@@ -20,9 +20,9 @@ final class Plugin {
 	private function __construct() {
 
 		/**
-		 * Load plugin textdomain.
+		 * Load plugin textdomain
 		 */
-		load_plugin_textdomain( 'woocommerce-checkout-manager', false, WOOCCM_PLUGIN_DIR . '/languages/' );
+		add_action( 'init', array( $this, 'load_textdomain' ) );
 
 		/**
 		 * Load plugin on woocommerce_init
@@ -63,6 +63,10 @@ final class Plugin {
 		 * Clear session on checkout order processed
 		 */
 		add_action( 'woocommerce_checkout_order_processed', array( $this, 'clear_session' ), 150 );
+	}
+
+	public function load_textdomain() {
+		load_plugin_textdomain( 'woocommerce-checkout-manager', false, WOOCCM_PLUGIN_DIR . '/languages/' );
 	}
 
 	public function register_scripts() {
