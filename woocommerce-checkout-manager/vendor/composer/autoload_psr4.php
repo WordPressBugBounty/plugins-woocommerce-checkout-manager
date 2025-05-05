@@ -11,4 +11,7 @@ return array(
     'QuadLayers\\WP_Notice_Plugin_Required\\' => array($baseDir . '/jetpack_vendor/quadlayers/wp-notice-plugin-required/src'),
     'QuadLayers\\WP_Notice_Plugin_Promote\\' => array($baseDir . '/jetpack_vendor/quadlayers/wp-notice-plugin-promote/src'),
     'QuadLayers\\WP_Dashboard_Widget_News\\' => array($baseDir . '/jetpack_vendor/quadlayers/wp-dashboard-widget-news/src'),
+    'QuadLayers\\PluginFeedback\\' => array($vendorDir . '/franmastromarino/wp-plugin-feedback/src'),
+    'Psr\\Log\\' => array($vendorDir . '/psr/log/Psr/Log'),
+    'Monolog\\' => array($vendorDir . '/monolog/monolog/src/Monolog'),
 );
