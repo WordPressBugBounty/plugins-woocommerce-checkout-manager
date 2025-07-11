@@ -5,7 +5,7 @@ Tags: woocommerce checkout, woocommerce checkout field, checkout field editor, c
 Requires at least: 4.7
 Requires PHP: 5.6
 Tested up to: 6.8
-Stable tag: 7.7.1
+Stable tag: 7.7.2
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 WC requires at least: 4.0
@@ -153,8 +153,8 @@ Your Order data can be reviewed in each order within the default WooCommerce Ord
 
 == Changelog ==
 
-=  7.7.1
-* WooCommerce compatibility
+=  7.7.2
+* Fix: php errors
 
 =  7.7.0
 * Fix update dependencies
