@@ -93,10 +93,24 @@ class Field extends Controller {
 			'orderby'    => 'id',
 			'order'      => 'ASC',
 			'hide_empty' => true,
-			'fields'     => 'all',
+			'fields'     => 'id=>name',
 		);
 
-		return get_terms( $args );
+		$terms = get_terms( $args );
+		
+		if ( is_wp_error( $terms ) || empty( $terms ) ) {
+			return array();
+		}
+
+		$categories = array();
+		foreach ( $terms as $term_id => $name ) {
+			$categories[] = (object) array(
+				'term_id' => $term_id,
+				'name'    => $name,
+			);
+		}
+
+		return $categories;
 	}
 
 	// Ajax

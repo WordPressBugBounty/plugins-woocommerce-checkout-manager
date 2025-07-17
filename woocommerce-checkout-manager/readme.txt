@@ -1,483 +1,476 @@
 ﻿=== Checkout Field Manager (Checkout Manager) for WooCommerce ===
 Contributors: quadlayers
 Donate link: https://quadlayers.com/products/woocommerce-checkout-manager/
-Tags: woocommerce checkout, woocommerce checkout field, checkout field editor, checkout manager, checkout field customizer
+Tags: woocommerce checkout, checkout editor, checkout fields, checkout manager, checkout field customizer
 Requires at least: 4.7
 Requires PHP: 5.6
 Tested up to: 6.8
-Stable tag: 7.7.2
+Stable tag: 7.7.3
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 WC requires at least: 4.0
-WC tested up to: 9.9
+WC tested up to: 10.0
 
-Checkout Field Manager (Checkout Manager) for WooCommerce is the best plugin most advanced "Checkout Manager" to customize checkout fields on your WooCommerce checkout page.
+Checkout Field Manager (Checkout Manager) for WooCommerce is the most advanced plugin to customize checkout fields on your WooCommerce checkout page.
 
 == Description ==
 
 [Premium](https://quadlayers.com/products/woocommerce-checkout-manager/) | [Demo](https://quadlayers.com/woocommerce-checkout-manager/checkout/?add-to-cart=32) | [Documentation](https://quadlayers.com/documentation/woocommerce-checkout-manager/) | [Community](https://www.facebook.com/groups/quadlayers/)
 
-WooCommerce Checkout Manager is the best checkout form customizer and editor for WooCommerce. This plugin allows you to delete, change and re-order the WooCommerce checkout fields and create more than 20 custom fields inside the billing or shipping checkout forms.
+WooCommerce Checkout Manager is the best checkout form customizer and editor for WooCommerce. This plugin allows you to delete, modify, and reorder WooCommerce checkout fields, and create more than 20 custom fields within the billing or shipping checkout forms.
 
 == Presentation ==
 
-Checkout Field Manager (Checkout Manager) for WooCommerce  allows you to include custom fields to the checkout page, related to billing, Shipping or Additional fields sections.
+Checkout Field Manager (Checkout Manager) for WooCommerce allows you to include custom fields in the checkout page, related to the Billing, Shipping, or Additional fields sections.
 
-Our plugin allows to reorder, remove or change the field type of the WooCommerce core fields. You can choose between this field types: Text, Textarea, Password, Radio, Checkbox, Select, Country, State, Multiselect, Multicheckbox, Heading, Colorpicker, File uploader.
+Our plugin allows you to reorder, remove, or change the field types of WooCommerce core fields. You can choose from the following field types: Text, Textarea, Password, Radio, Checkbox, Select, Country, State, Multiselect, Multicheckbox, Heading, Color Picker, and File Uploader.
 
 [youtube https://youtu.be/j2WuL2kFtnY]
 
 == WooCommerce Checkout Fields ==
 
-The field types supported to include in the checkout are:
+The supported field types that can be included in the checkout are:
 
-	*	Heading
-	*	Email
-	*	Phone
-	*	Message
-	*	Button
-	*	Text
-	*	Textarea
-	*	Password
-	*	Select
-	*	Radio
-	*	Checkbox
-	*	Timepicker
-	*	Datepicker
-	*	Number
-	*	Country
-	*	State
-	*	Multiselect
-	*	Multicheckbox
-	*	Colorpicker
-	*	File Upload
+- Heading
+- Email
+- Phone
+- Message
+- Button
+- Text
+- Textarea
+- Password
+- Select
+- Radio
+- Checkbox
+- Time Picker
+- Date Picker
+- Number
+- Country
+- State
+- Multiselect
+- Multicheckbox
+- Color Picker
+- File Upload
 
 == Formerly WooCommerce Checkout Manager ==
 
-This plugin was formerly known as "WooCommerce Checkout Manager". WordPress forced us on November 8, 2019 to change the name of the plugin due to use of the "WooCommerce" word in the name. We apologize for the problems that the downtime may have caused to you.
+This plugin was formerly known as "WooCommerce Checkout Manager." On November 8, 2019, WordPress required us to change the plugin name due to the use of "WooCommerce" in the title. We apologize for any inconvenience caused by the downtime.
 
-== WooCommerce Checkout Fields ==
+== Features ==
 
-Checkout Field Manager (Checkout Manager) for WooCommerce allows you to include custom fields to the checkout page, related to billing, Shipping or Additional fields sections.
+Checkout Field Manager (Checkout Manager) for WooCommerce allows you to include custom fields in the checkout page, related to the Billing, Shipping, or Additional sections.
 
-Our plugin allows to reorder, remove or change the field type of the WooCommerce core or custom fields.
+- Reorder fields
+- Rename and highlight fields
+- Show, hide, or extend checkout fields within the Billing, Shipping, and Additional sections
 
-* Re-order fields.
-* Rename and higlight.
-* Hide or extend Checkout fields within the Billing, Shipping and Additional sections.
+== Conditional Checkout Fields ==
 
-== WooCommerce Checkout Conditional Fields ==
+Checkout Field Manager supports conditional checkout fields, allowing you to show or hide fields based on the value of parent fields.
 
-Checkout Field Manager (Checkout Manager) for WooCommerce  supports conditional checkout fields allowing you to show/hide the fields based on any value of its parent fields.
+The system detects the parent field type and lets you define conditional logic based on the available options.
 
-Our system detects the parent field type and allows you to select the value based on the available options.
+== File Upload in Checkout ==
 
-== WooCommerce Checkout Upload Files ==
+You can include an unlimited number of file upload fields. Users will be able to upload or delete files through the order page. Uploaded files are visible in the order details.
 
-You can include an unlimited number of files from different types into fields. Then offer the user an option to display the uploaded files in order. The user will be allowed to upload or delete fields through the order page.
+== Checkout Process Customization ==
 
-== WooCommerce Checkout Process ==
+Checkout Field Manager lets you customize the WooCommerce checkout process, including or removing fields as required by your business flow.
 
-Checkout Field Manager (Checkout Manager) for WooCommerce  allows you to customize the checkout process, including or reducing order's fields collected. Our plugin is able to consider your billing data inside checkout page, and recovers all data required by your company process. 
+### Force Shipping Address
+Always display shipping fields by removing the toggle checkbox. Users are required to complete them.
 
-= Force to include shipping address =
-This option allows you to remove the toggle checkbox to display the shipping fields. Shipping fields will be always displayed, and the user is forced to complete them.
+### Force Account Creation
+Force account creation during checkout. The account will be automatically created using the billing email provided by the user.
 
-= Force to create an account =
-This option allows you to remove/include, the account creation during the purchase process. If selected, the account will be always created with the email defined by the user in the billing fields.
+### Remove Order Notes
+Option to remove the order notes field from the checkout form.
 
-= Remove order notes =
-This option allows you to remove the order notes in the checkout form.
+### Add Message Before Checkout
+Display a custom message before or after the checkout form. Use this to engage or thank your customers.
 
-= Add message before checkout =
-This option allows you to include a custom message before or after the checkout form. This works as engagement action message to grateful your customers.
+== Premium Features ==
 
-== WooCommerce Checkout Manager Premium ==
+The premium version of Checkout Field Manager offers a wide range of advanced features for full control of the checkout fields:
 
-The premium version of Checkout Field Manager (Checkout Manager) plugin offer you a wide range of extra features that allows a full controll of the checkout fields.
-
-> * Filter checkout fields based on cart sub total
-> * Display/Hide checkbox fields in account, checkout, orders, emails or invoices
-> * Add price to the checkout total based in checkout field value
-> * Display checkout fields in orders admin table list and allow sort and filter
-> * Woocommerce Cart and Checkout on same page
-> * Woocommerce Upload File
+- Filter fields based on cart subtotal
+- Show/hide checkbox fields in the account, checkout, orders, emails, or invoices
+- Add charges based on field values
+- Display fields in the orders admin list and allow sorting/filtering
+- WooCommerce cart and checkout on the same page
+- Upload files in WooCommerce checkout
 
 == Frequently Asked Questions ==
 
-= How to add checkout fields? =
+= How do I add checkout fields? =
+[Guide to adding checkout fields](https://quadlayers.com/documentation/woocommerce-checkout-manager/fields/)
 
-[Adding fields to checkout page](https://quadlayers.com/documentation/woocommerce-checkout-manager/fields/)
+= How do I remove default WooCommerce fields? =
+[Guide to removing fields](https://quadlayers.com/documentation/woocommerce-checkout-manager/fields/)
 
-= How to remove core checkout fields? =
+= How do I change the default field order? =
+[Reordering checkout fields](https://quadlayers.com/documentation/woocommerce-checkout-manager/fields/)
 
-[Removing checkout core fields](https://quadlayers.com/documentation/woocommerce-checkout-manager/fields/)
+= How do I reposition the Additional Fields section? =
+[Adjusting additional fields position](https://quadlayers.com/documentation/woocommerce-checkout-manager/fields/)
 
-= How to change default fields order? =
+= How do I add conditional fields? =
+[Adding conditional fields](https://quadlayers.com/documentation/woocommerce-checkout-manager/conditional/)
 
-[Reorder checkout fields](https://quadlayers.com/documentation/woocommerce-checkout-manager/fields/)
+= Where can I see the custom field data in orders? =
+Custom field data can be found within each order, inside the WooCommerce > Edit Order screen. Fields are grouped under Billing, Shipping, and Additional sections.
 
-= How to change additional fields position? =
+= Is it compatible with WooCommerce Checkout Blocks (Gutenberg)? =
 
-[Change additional fields position](https://quadlayers.com/documentation/woocommerce-checkout-manager/fields/)
+At the moment, the plugin is **not compatible with the new WooCommerce Checkout Blocks introduced in version 8.3 and later**.
 
-= How do I add conditional checkout fields? =
+If you need support for the new block-based checkout, feel free to leave a comment or request in the support forum so we can prioritize this feature in future updates.
 
-[Adding conditional checkout fields](https://quadlayers.com/documentation/woocommerce-checkout-manager/conditional/)
-
-= How do I review the Order data from the custom fields? =
-
-Your Order data can be reviewed in each order within the default WooCommerce Order Data box of the WooCommerce > Edit Order screen within the WordPress Administration. Custom fields are separated by Billing, Shipping and Additional sections.
+In the meantime, you can still use the plugin by ensuring your checkout page uses the classic shortcode (`[woocommerce_checkout]`). To do this, simply set the content of your checkout page to the shortcode to continue using all features of the plugin.
 
 == Screenshots ==
 
-1. Customize shipping fields, create account, order notes and include custom message in checkout page.
-
-2. Customize or add additional fields to your checkout billing fields.
-
-3. Customize or add additional fields to your checkout shipping fields.
-
-4. Include additional fields to your checkout page.
-
-5. Allow users to upload images in their orders.
-
-6. Include select and radio fields and select default option.
-
-7. Include multiselect and multicheckbox fields and select defaults options.
-
-8. Set conditional relationships easily based on the parent value or parent options.
-
-9. Show or hide fields based on the products selected in the cart.
-
-10. Handle uploaded files in order admin dashboard.
+1. Customize shipping fields, account creation, order notes, and include a custom message.
+2. Add or customize billing fields.
+3. Add or customize shipping fields.
+4. Include additional fields on the checkout page.
+5. Let users upload images with their orders.
+6. Use select and radio fields with default options.
+7. Use multiselect and multicheckbox fields with default values.
+8. Easily set conditional logic based on parent fields.
+9. Show/hide fields based on cart contents.
+10. Manage uploaded files in the order admin dashboard.
 
 == Changelog ==
 
-=  7.7.2
-* Fix: php errors
+= 7.7.3 =
+* Fix: improve get_terms to reduce term load time
 
-=  7.7.0
-* Fix update dependencies
+= 7.7.2 =
+* Fix: PHP errors
 
-=  7.6.9
-* Fix textdomain issue
+= 7.7.0 =
+* Fix: Update dependencies
 
-=  7.6.8
+= 7.6.9 =
+* Fix: Textdomain issue
+
+= 7.6.8 =
 * WooCommerce compatibility
 
-=  7.6.7
+= 7.6.7 =
 * WooCommerce compatibility
-* Fix textdomain issue
+* Fix: Textdomain issue
 
-=  7.6.6
-* Fix WooCommerce checkout fields order in order list
+= 7.6.6 =
+* Fix: WooCommerce checkout fields order in order list
 
-=  7.6.5
-* Fix WooCommerce order list php errors
+= 7.6.5 =
+* Fix: WooCommerce order list PHP errors
 
-=  7.6.4
-* WooCommerce compatibility
-
-=  7.6.3
-* Fix textarea in advanced checkout fields
-
-=  7.6.2
+= 7.6.4 =
 * WooCommerce compatibility
 
-=  7.6.0
+= 7.6.3 =
+* Fix: Textarea in advanced checkout fields
+
+= 7.6.2 =
 * WooCommerce compatibility
 
-=  7.5.9
-* WooCommerce compatibility
-* Fix country and state fields
-
-=  7.5.8
+= 7.6.0 =
 * WooCommerce compatibility
 
-=  7.5.7
+= 7.5.9 =
+* WooCommerce compatibility
+* Fix: Country and state fields
+
+= 7.5.8 =
+* WooCommerce compatibility
+
+= 7.5.7 =
 * Update dependencies
 
-=  7.5.6
+= 7.5.6 =
 * WooCommerce order uploaded image size
 
-=  7.5.5
+= 7.5.5 =
 * WooCommerce compatibility
 
-=  7.5.4
-* Fix Timepicker checkout field
+= 7.5.4 =
+* Fix: Timepicker checkout field
 
-=  7.5.3
-* Fix update my account fields
+= 7.5.3 =
+* Fix: Update My Account fields
 
-=  7.5.2
-* Fix checkout field label and description HTML
+= 7.5.2 =
+* Fix: Checkout field label and description HTML
 
-=  7.5.1
+= 7.5.1 =
 * WooCommerce compatibility
 
-=  7.5.0
+= 7.5.0 =
 * Declare incompatibility with WooCommerce blocks
 
-=  7.4.9
-* WooCommerce my account file field support
+= 7.4.9 =
+* WooCommerce My Account file field support
 
-=  7.4.8
+= 7.4.8 =
 * WooCommerce compatibility
 
-=  7.4.7
+= 7.4.7 =
 * Fix: Checkout radio files
 
-=  7.4.5
+= 7.4.5 =
 * Fix: i18n strings
 
-=  7.4.4
+= 7.4.4 =
 * Fix: Checkout conditional fields
 * Fix: WPML compatibility
 
-=  7.4.3
+= 7.4.3 =
 * Fix: PHP errors
 
-=  7.4.2
+= 7.4.2 =
 * Fix: PHP errors
 
-=  7.4.1
+= 7.4.1 =
 * Fix: Conditional fields fees
 
-=  7.4.0
+= 7.4.0 =
 * Fix: WooCommerce HPOS compatibility
 
-=  7.3.1
-* Fix security issues on checkour and order image upload
+= 7.3.1 =
+* Fix: Security issues on checkout and order image upload
 
-=  7.3.0
-* Fix checkout state field conditional
+= 7.3.0 =
+* Fix: Checkout state field conditional
 
-=  7.2.9
-* Fix nested conditional fields
+= 7.2.9 =
+* Fix: Nested conditional fields
 
-=  7.2.8
+= 7.2.8 =
 * WooCommerce compatibility
 
-=  7.2.7
-* Fix regex validation
+= 7.2.7 =
+* Fix: Regex validation
 
-=  7.2.6
+= 7.2.6 =
 * Update readme.txt
 
-=  7.2.5
+= 7.2.5 =
 * Update portfolio link
 
-=  7.2.4
+= 7.2.4 =
 * WooCommerce compatibility
 
-=  7.2.3
+= 7.2.3 =
 * WooCommerce compatibility
 * WordPress compatibility
 
-=  7.2.2
-* Fix: WooCommerce checkout manager premium compatibility
-* Fix: WooCommerce checkout duplicated additional fields alerts
+= 7.2.2 =
+* Fix: WooCommerce Checkout Manager premium compatibility
+* Fix: Duplicated additional fields alerts
 
-=  7.2.1
-* Fix: WooCommerce checkout fields modal
+= 7.2.1 =
+* Fix: Checkout fields modal
 
-=  7.2.0
+= 7.2.0 =
 * Fix: WooCommerce compatibility
-* New: WooCommerce checkout field user meta
-* New: WooCommerce checkout field autocomplete
+* New: Checkout field user meta
+* New: Checkout field autocomplete
 
-=  7.1.9
-* Fix: WooCommerce checkout fields autocomplete
-* Fix: WooCommerce checkout fields user meta
+= 7.1.9 =
+* Fix: Checkout fields autocomplete
+* Fix: Checkout fields user meta
 
-=  7.1.8
+= 7.1.8 =
 * New: WooCommerce HPOS compatibility
 * New: WooCommerce COT compatibility
 
-=  7.1.6
+= 7.1.6 =
 * Fix: Multicheckbox and multiradio fields
 
-=  7.1.5
+= 7.1.5 =
 * Fix: WooCommerce compatibility
 
-=  7.1.4
+= 7.1.4 =
 * Fix: WooCommerce compatibility
 
-=  7.1.3
+= 7.1.3 =
 * Fix: Address 2 checkout field label
 * Fix: Remove admin order values
 * Fix: Default options in multicheckbox, select, radio fields
 
-=  7.1.2
-* Fix: WooCommerce Paypal Payments compatibility
+= 7.1.2 =
+* Fix: WooCommerce PayPal Payments compatibility
 
-=  7.1.1
+= 7.1.1 =
 * Fix: WordPress compatibility
 
-=  7.1.0
-* Fix: Minlengh for input text fields
+= 7.1.0 =
+* Fix: Minlength for input text fields
 
-=  7.0.9
+= 7.0.9 =
 * Fix: Hide empty order extra fields
 
-=  7.0.8
+= 7.0.8 =
 * Fix: Composer packages update
 
-=  7.0.7
+= 7.0.7 =
 * Fix: Composer packages update
 
-=  7.0.6
+= 7.0.6 =
 * Fix: Language package update
 
-=  7.0.5
+= 7.0.5 =
 * Fix: Composer packages update
 
-= 7.0.4 = 
-* Fix: Fix Call to a member function get_cart_contents() on null
+= 7.0.4 =
+* Fix: Call to a member function get_cart_contents() on null
 
-=  7.0.3
-* Fix: WooCommerce Paypal Payments compatibility
+= 7.0.3 =
+* Fix: WooCommerce PayPal Payments compatibility
 
-=  7.0.2
+= 7.0.2 =
 * Fix: WOOCCM function compatibility
 
-=  7.0.1
+= 7.0.1 =
 * Fix: WOOCCM function compatibility
 
-=  7.0.0
+= 7.0.0 =
 * Refactor
 
-=  6.4.2
-* Fix. WooCommerce Compatibility
+= 6.4.2 =
+* Fix: WooCommerce compatibility
 
-=  6.4.1
-* Fix. State field type disabled
-* Fix. State field select when country field is disabled
+= 6.4.1 =
+* Fix: State field type disabled
+* Fix: State field select when country field is disabled
 
-=  6.4.0
-* New. Settings link
+= 6.4.0 =
+* New: Settings link
 
-=  6.3.9
-* New. Settings link
+= 6.3.9 =
+* New: Settings link
 
-=  6.3.8
-* New. Regex validation for premium version
+= 6.3.8 =
+* New: Regex validation (premium version)
 
-=  6.3.7
-* Fix. WooCommerce order video upload
-* Fix. WooCommerce order upload
-* New. WooCommerce order uploaded files icons
+= 6.3.7 =
+* Fix: WooCommerce order video upload
+* Fix: WooCommerce order upload
+* New: Order uploaded files icons
 
-=  6.3.6
-* Fix. Premium Compatibility
+= 6.3.6 =
+* Fix: Premium compatibility
 
-=  6.3.5
-* Fix. WordPress Compatibility
+= 6.3.5 =
+* Fix: WordPress compatibility
 
-=  6.3.4
-* Fix. WooCommerce Checkout Email default fields
+= 6.3.4 =
+* Fix: WooCommerce checkout email default fields
 
-=  6.3.3
-* Fix. WooCommerce Compatibility
+= 6.3.3 =
+* Fix: WooCommerce compatibility
 
-=  6.3.2
-* Fix. WooCommerce Account fields
-* Fix. WooCommerce default billing & shipping fields
+= 6.3.2 =
+* Fix: WooCommerce account fields
+* Fix: Default billing & shipping fields
 
-=  6.3.1
-* Fix. WooCommerce Account fields
-* Fix. WooCommerce Checkout conditional field prices
+= 6.3.1 =
+* Fix: WooCommerce account fields
+* Fix: Conditional field prices
 
-=  6.2.8
-* Fix. WooCommerce Checkout alert removed
+= 6.2.8 =
+* Fix: Checkout alert removed
 
-=  6.2.7
-* Fix. Elementor checkout upload
+= 6.2.7 =
+* Fix: Elementor checkout upload
 
-=  6.2.6
-* Fix. WooCommerce compatibility
+= 6.2.6 =
+* Fix: WooCommerce compatibility
 
-=  6.2.4
-* Fix. WPML compatibility
-* Fix. Polylang compatibility
+= 6.2.4 =
+* Fix: WPML compatibility
+* Fix: Polylang compatibility
 
-=  6.2.3
-* Fix. PHP erros
+= 6.2.3 =
+* Fix: PHP errors
 
-=  6.2.2
-* Fix. PHP erros
+= 6.2.2 =
+* Fix: PHP errors
 
-=  6.2.1
-* Fix. PHP erros
+= 6.2.1 =
+* Fix: PHP errors
 
-=  6.2.0
-* Fix. PHP erros
+= 6.2.0 =
+* Fix: PHP errors
 
-=  6.1.9
-* Fix. WooCommerce Checkout WPML compatibility
-* Fix. WooCommerce Checkout Polylang compatibility
+= 6.1.9 =
+* Fix: WPML and Polylang compatibility
 
-=  6.1.8
-* Fix. WooCommerce 6.8 compatibility
+= 6.1.8 =
+* Fix: WooCommerce 6.8 compatibility
 
-=  6.1.7
-* Fix. WooCommerce Account fields remove
+= 6.1.7 =
+* Fix: Account fields removal
 
-=  6.1.6
-* Fix. WooCommerce Account fields
+= 6.1.6 =
+* Fix: Account fields
 
-=  6.1.5
-* Fix. WPML compatibility
+= 6.1.5 =
+* Fix: WPML compatibility
 
-=  6.1.4
-* Fix. string translations
+= 6.1.4 =
+* Fix: String translations
 
-=  6.1.3
-* Fix. WooCommerce Checkout fields filters
-* Fix. WooCommerce Checkout force shipping address checkbox
+= 6.1.3 =
+* Fix: Checkout fields filters
+* Fix: Force shipping address checkbox
 
-=  6.1.2
-* Fix. WooCommerce Checkout force shipping address checkbox
+= 6.1.2 =
+* Fix: Force shipping address checkbox
 
-=  6.1.1
-* Fix. PHP erros
+= 6.1.1 =
+* Fix: PHP errors
 
-=  6.1.0
-* Fix. WooCommerce Checkout force shipping address
-* Fix. WooCommerce Checkout WPML compatibility
-* New. WooCommerce Checkout Polylang compatibility
+= 6.1.0 =
+* Fix: Force shipping address
+* Fix: WPML compatibility
+* New: Polylang compatibility
 
-=  6.0.9
-* Fix. WooCommerce Checkout required fields save
+= 6.0.9 =
+* Fix: Required fields save
 
-=  6.0.8
-* Fix. WooCommerce Checkout force shipping address checkbox
+= 6.0.8 =
+* Fix: Force shipping address checkbox
 
-=  6.0.7.8
-* Fix. WooCommerce Checkout conditional fields
+= 6.0.7.8 =
+* Fix: Conditional fields
 
-=  6.0.7.7
-* Fix. WooCommerce Checkout conditional fields
+= 6.0.7.7 =
+* Fix: Conditional fields
 
-=  6.0.7.6
-* Fix. WooCommerce Checkout conditional fields
+= 6.0.7.6 =
+* Fix: Conditional fields
 
-=  6.0.7.5
-* Fix. WooCommerce Checkout billing fields
+= 6.0.7.5 =
+* Fix: Billing fields
 
-=  6.0.7.4
-* Fix. WooCommerce Checkout remove fields
+= 6.0.7.4 =
+* Fix: Remove fields
 
-=  6.0.7.2
-* Fix. WooCommerce Checkout email settings save
-* Fix: WooCommerce Checkout Datepicker placeholder 
-* Fix: WooCommerce Checkout Address field conditional hidden 
+= 6.0.7.2 =
+* Fix: Email settings save
+* Fix: Datepicker placeholder
+* Fix: Address field conditional hidden
 
-=  6.0.7
-* Fix. WooCommerce billing & shipping filters order to allow third party plugins hooks checkout fields 
+= 6.0.7 =
+* Fix: Filters order for third-party plugin compatibility
 
-=  6.0.6 
-* New. QuadLayers dashboard widget
+= 6.0.6 =
+* New: QuadLayers dashboard widget
 
 = 6.0.5 = 
 * Fix: WooCommerce compatibility
@@ -527,13 +520,13 @@ Your Order data can be reviewed in each order within the default WooCommerce Ord
 = 5.5.0 = 
 * Fix: WordPress compatibility
 
-= 5.4.9  = 
+= 5.4.9 = 
 * Fix. QuadLayers widget cache
 
-= 5.4.8  = 
+= 5.4.8 = 
 * Fix: WordPress compatibility
 
-= 5.4.7  = 
+= 5.4.7 = 
 * Fix: WordPress compatibility
 
 = 5.4.6 = 
@@ -545,7 +538,7 @@ Your Order data can be reviewed in each order within the default WooCommerce Ord
 = 5.4.4 = 
 * New. QuadLayers dashboard widget
 
-= 5.4.3  = 
+= 5.4.3= 
 * Fix: WordPress compatibility
 
 = 5.4.2 = 
