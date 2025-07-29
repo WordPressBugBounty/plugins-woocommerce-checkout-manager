@@ -5,7 +5,7 @@ Tags: woocommerce checkout, checkout editor, checkout fields, checkout manager, 
 Requires at least: 4.7
 Requires PHP: 5.6
 Tested up to: 6.8
-Stable tag: 7.7.3
+Stable tag: 7.7.4
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 WC requires at least: 4.0
@@ -143,6 +143,9 @@ In the meantime, you can still use the plugin by ensuring your checkout page use
 10. Manage uploaded files in the order admin dashboard.
 
 == Changelog ==
+
+= 7.7.4 =
+* Fix: Update dependencies
 
 = 7.7.3 =
 * Fix: improve get_terms to reduce term load time
