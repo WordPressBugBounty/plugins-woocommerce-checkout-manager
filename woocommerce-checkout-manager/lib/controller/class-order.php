@@ -340,7 +340,7 @@ class Order extends Upload {
 		if ( ! empty( $options['checkness']['upload_os'] ) ) {
 			$upload_os_option = $options['checkness']['upload_os'];
 			if ( ! is_array( $upload_os_option ) ) {
-				$upload_os_option = [ $upload_os_option ];
+				$upload_os_option = array( $upload_os_option );
 			}
 			return (array) @implode( ',', $upload_os_option );
 		}

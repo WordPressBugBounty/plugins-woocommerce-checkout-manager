@@ -116,7 +116,7 @@ class Field_Additional extends Field {
 					<?php esc_html_e( 'Additional', 'woocommerce-checkout-manager' ); ?>
 				<a href="#" class="edit_address"><?php esc_html_e( 'Edit', 'woocommerce-checkout-manager' ); ?></a>
 				<span>
-					<a href="<?php echo esc_url( WOOCCM_PREMIUM_SELL_URL ); ?>" class="load_customer_additional" target="_blank" style="display:none;font-size: 13px;font-weight: 400;">
+					<a href="<?php echo esc_url( 'https://quadlayers.com/products/woocommerce-checkout-manager/?utm_source=wooccm_plugin&utm_medium=admin_order&utm_campaign=premium_upgrade&utm_content=premium_feature_link' ); ?>" class="load_customer_additional" target="_blank" style="display:none;font-size: 13px;font-weight: 400;">
 					<?php esc_html_e( 'This is a premium feature.', 'woocommerce-checkout-manager' ); ?>
 					</a>
 				</span>

@@ -2,8 +2,8 @@
 	<h1><?php esc_html_e( 'Suggestions', 'woocommerce-checkout-manager' ); ?></h1>
 	<p class="about-text"><?php printf( esc_html__( 'Thanks for using our product! We recommend these extensions that will add new features to stand out your business and improve your sales.', 'woocommerce-checkout-manager' ), esc_html( WOOCCM_PLUGIN_NAME ) ); ?></p>
 	<p class="about-text">
-		<?php printf( '<a href="%s" target="_blank">%s</a>', esc_url( WOOCCM_PREMIUM_SELL_URL ), esc_html__( 'Purchase', 'woocommerce-checkout-manager' ) ); ?></a> |
-		<?php printf( '<a href="%s" target="_blank">%s</a>', esc_url( WOOCCM_DOCUMENTATION_URL ), esc_html__( 'Documentation', 'woocommerce-checkout-manager' ) ); ?></a>
+		<?php printf( '<a href="%s" target="_blank">%s</a>', esc_url( 'https://quadlayers.com/products/woocommerce-checkout-manager/?utm_source=wooccm_plugin&utm_medium=admin_header&utm_campaign=premium_upgrade&utm_content=premium_link' ), esc_html__( 'Purchase', 'woocommerce-checkout-manager' ) ); ?></a> |
+		<?php printf( '<a href="%s" target="_blank">%s</a>', esc_url( 'https://quadlayers.com/documentation/woocommerce-checkout-manager/?utm_source=wooccm_plugin&utm_medium=admin_header&utm_campaign=documentation&utm_content=documentation_link' ), esc_html__( 'Documentation', 'woocommerce-checkout-manager' ) ); ?></a>
 	</p>
 	<?php
 	printf(
@@ -21,7 +21,7 @@
 				display: inline-block;
 				width: 140px;
 				" class="wp-badge">%s</div></a>',
-		'https://quadlayers.com/?utm_source=wooccm_admin',
+		'https://quadlayers.com/?utm_source=wooccm_plugin&utm_medium=admin_header&utm_campaign=branding&utm_content=header_logo',
 		esc_url( plugins_url( '/assets/backend/img/quadlayers.jpg', WOOCCM_PLUGIN_FILE ) ), // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		esc_html__( 'QuadLayers', 'woocommerce-checkout-manager' )
 	);

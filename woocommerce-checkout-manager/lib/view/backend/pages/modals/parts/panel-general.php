@@ -171,7 +171,7 @@
 		<p class="form-field dimensions_field wooccm-premium-field">
 			<label><?php esc_html_e( 'Validate Regex', 'woocommerce-checkout-manager' ); ?></label>
 			<input class="short" type="text" name="validate_regex" placeholder="<?php esc_html_e( 'Enter a regex to validate input data', 'woocommerce-checkout-manager' ); ?>" value="{{data.validate_regex}}">
-			<span class="description"><a target="_blank" href="w3schools.com/php/php_regex.asp">PHP Regular Expressions</a>.</span>
+			<span class="description"><a target="_blank" href="https://w3schools.com/php/php_regex.asp">PHP Regular Expressions</a>.</span>
 			<span class="description premium">(<?php esc_html_e( 'This is a premium feature', 'woocommerce-checkout-manager' ); ?>)</span>
 		</p>
 	<# } #>

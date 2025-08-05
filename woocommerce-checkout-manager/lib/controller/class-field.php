@@ -97,7 +97,7 @@ class Field extends Controller {
 		);
 
 		$terms = get_terms( $args );
-		
+
 		if ( is_wp_error( $terms ) || empty( $terms ) ) {
 			return array();
 		}

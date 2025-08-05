@@ -12,19 +12,19 @@ if ( class_exists( 'QuadLayers\\WP_Plugin_Table_Links\\Load' ) ) {
 				),
 				array(
 					'text' => esc_html__( 'Premium', 'woocommerce-checkout-manager' ),
-					'url'  => WOOCCM_PREMIUM_SELL_URL,
+					'url'  => 'https://quadlayers.com/products/woocommerce-checkout-manager/?utm_source=wooccm_plugin&utm_medium=plugin_table&utm_campaign=premium_upgrade&utm_content=premium_link',
 					'color' => 'green',
 					'target' => '_blank',
 				),
 				array(
 					'place' => 'row_meta',
 					'text'  => esc_html__( 'Support', 'woocommerce-checkout-manager' ),
-					'url'   => WOOCCM_SUPPORT_URL,
+					'url'   => 'https://quadlayers.com/account/support/?utm_source=wooccm_plugin&utm_medium=plugin_table&utm_campaign=support&utm_content=support_link',
 				),
 				array(
 					'place' => 'row_meta',
 					'text'  => esc_html__( 'Documentation', 'woocommerce-checkout-manager' ),
-					'url'   => WOOCCM_DOCUMENTATION_URL,
+					'url'   => 'https://quadlayers.com/documentation/woocommerce-checkout-manager/?utm_source=wooccm_plugin&utm_medium=plugin_table&utm_campaign=documentation&utm_content=documentation_link',
 				),
 			)
 		);

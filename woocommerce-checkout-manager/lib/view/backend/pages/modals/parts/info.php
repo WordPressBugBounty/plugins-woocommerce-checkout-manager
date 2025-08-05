@@ -73,6 +73,6 @@
 
 <div class="actions">
 	<a target="_blank" class="view-attachment" href="<?php echo esc_url( wc_get_page_permalink( 'checkout' ) ); ?>"><?php esc_html_e( 'View checkout page', 'woocommerce-checkout-manager' ); ?></a> |
-	<a target="_blank" href="<?php echo esc_url( WOOCCM_PREMIUM_SELL_URL ); ?>"><?php esc_html_e( 'Get premium version', 'woocommerce-checkout-manager' ); ?></a> |
-	<a target="_blank" href="<?php echo esc_url( WOOCCM_DOCUMENTATION_URL ); ?>"><?php esc_html_e( 'View documentation', 'woocommerce-checkout-manager' ); ?></a>
+	<a target="_blank" href="<?php echo esc_url( 'https://quadlayers.com/products/woocommerce-checkout-manager/?utm_source=wooccm_plugin&utm_medium=admin_modal&utm_campaign=premium_upgrade&utm_content=premium_link' ); ?>"><?php esc_html_e( 'Get premium version', 'woocommerce-checkout-manager' ); ?></a> |
+	<a target="_blank" href="<?php echo esc_url( 'https://quadlayers.com/documentation/woocommerce-checkout-manager/?utm_source=wooccm_plugin&utm_medium=admin_modal&utm_campaign=documentation&utm_content=documentation_link' ); ?>"><?php esc_html_e( 'View documentation', 'woocommerce-checkout-manager' ); ?></a>
 </div>

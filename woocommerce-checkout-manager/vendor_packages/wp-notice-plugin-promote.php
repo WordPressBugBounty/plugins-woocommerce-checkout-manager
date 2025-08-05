@@ -15,15 +15,15 @@ if ( class_exists( 'QuadLayers\\WP_Notice_Plugin_Promote\\Load' ) ) {
 		 */
 		define( 'WOOCCM_PROMOTE_PREMIUM_SELL_SLUG', 'woocommerce-checkout-manager-pro' );
 		define( 'WOOCCM_PROMOTE_PREMIUM_SELL_NAME', 'WooCommerce Checkout Manager PRO' );
-		define( 'WOOCCM_PROMOTE_PREMIUM_SELL_URL', WOOCCM_PREMIUM_SELL_URL );
-		define( 'WOOCCM_PROMOTE_PREMIUM_INSTALL_URL', 'https://quadlayers.com/products/woocommerce-checkout-manager/?utm_source=wooccm_admin' );
+		define( 'WOOCCM_PROMOTE_PREMIUM_SELL_URL', 'https://quadlayers.com/products/woocommerce-checkout-manager/?utm_source=wooccm_plugin&utm_medium=dashboard_notice&utm_campaign=premium_upgrade&utm_content=premium_link' );
+		define( 'WOOCCM_PROMOTE_PREMIUM_INSTALL_URL', 'https://quadlayers.com/products/woocommerce-checkout-manager/?utm_source=wooccm_plugin&utm_medium=dashboard_notice&utm_campaign=premium_upgrade&utm_content=premium_install_button' );
 		/**
 		 * Notice cross sell 1
 		 */
 		define( 'WOOCCM_PROMOTE_CROSS_INSTALL_1_SLUG', 'woocommerce-direct-checkout' );
 		define( 'WOOCCM_PROMOTE_CROSS_INSTALL_1_NAME', 'Direct Checkout' );
 		define( 'WOOCCM_PROMOTE_CROSS_INSTALL_1_DESCRIPTION', esc_html__( 'Direct Checkout for WooCommerce allows you to reduce the steps in the checkout process by skipping the shopping cart page. This can encourage buyers to shop more and quickly. You will increase your sales reducing cart abandonment.', 'woocommerce-checkout-manager' ) );
-		define( 'WOOCCM_PROMOTE_CROSS_INSTALL_1_URL', 'https://quadlayers.com/products/woocommerce-direct-checkout/?utm_source=wooccm_admin' );
+		define( 'WOOCCM_PROMOTE_CROSS_INSTALL_1_URL', 'https://quadlayers.com/products/woocommerce-direct-checkout/?utm_source=wooccm_plugin&utm_medium=dashboard_notice&utm_campaign=cross_sell&utm_content=direct_checkout_link' );
 		define( 'WOOCCM_PROMOTE_CROSS_INSTALL_1_LOGO_SRC', plugins_url( '/assets/backend/img/woocommerce-direct-checkout.jpg', WOOCCM_PLUGIN_FILE ) );
 
 		/**
@@ -32,7 +32,7 @@ if ( class_exists( 'QuadLayers\\WP_Notice_Plugin_Promote\\Load' ) ) {
 		define( 'WOOCCM_PROMOTE_CROSS_INSTALL_2_SLUG', 'perfect-woocommerce-brands' );
 		define( 'WOOCCM_PROMOTE_CROSS_INSTALL_2_NAME', 'Perfect WooCommerce Brands' );
 		define( 'WOOCCM_PROMOTE_CROSS_INSTALL_2_DESCRIPTION', esc_html__( 'Perfect WooCommerce Brands the perfect tool to improve customer experience on your site. It allows you to highlight product brands and organize them in lists, dropdowns, thumbnails, and as a widget.', 'woocommerce-checkout-manager' ) );
-		define( 'WOOCCM_PROMOTE_CROSS_INSTALL_2_URL', 'https://quadlayers.com/products/perfect-woocommerce-brands/?utm_source=wooccm_admin' );
+		define( 'WOOCCM_PROMOTE_CROSS_INSTALL_2_URL', 'https://quadlayers.com/products/perfect-woocommerce-brands/?utm_source=wooccm_plugin&utm_medium=dashboard_notice&utm_campaign=cross_sell&utm_content=perfect_brands_link' );
 		define( 'WOOCCM_PROMOTE_CROSS_INSTALL_2_LOGO_SRC', plugins_url( '/assets/backend/img/perfect-woocommerce-brands.jpg', WOOCCM_PLUGIN_FILE ) );
 
 		new \QuadLayers\WP_Notice_Plugin_Promote\Load(
@@ -49,7 +49,7 @@ if ( class_exists( 'QuadLayers\\WP_Notice_Plugin_Promote\\Load' ) ) {
 									'<br>'
 					),
 					'notice_link'        => WOOCCM_PROMOTE_REVIEW_URL,
-					'notice_more_link'   => WOOCCM_SUPPORT_URL,
+					'notice_more_link'   => 'https://quadlayers.com/account/support/?utm_source=wooccm_plugin&utm_medium=dashboard_notice&utm_campaign=support&utm_content=report_bug_button',
 					'notice_more_label'  => esc_html__(
 						'Report a bug',
 						'woocommerce-checkout-manager'

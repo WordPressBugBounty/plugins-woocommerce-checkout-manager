@@ -12,7 +12,7 @@
 			<p class="form-field">
 			<label><?php esc_html_e( 'Date format', 'woocommerce-checkout-manager' ); ?></label>
 			<input <# if ( !data.select2 ) { #>disabled="disabled"<# } #> class="short" type="text" placeholder="mm/dd/yy" name="date_format" value="{{data.date_format}}">
-				<span class="description"><a target="_blank" href="https://quadlayers.com/documentation/woocommerce-checkout-manager/fields/datepicker/?utm_source=wooccm_admin">Documentation on date and time formatting</a>.</span>
+				<span class="description"><a target="_blank" href="https://quadlayers.com/documentation/woocommerce-checkout-manager/fields/datepicker/?utm_source=wooccm_plugin&utm_medium=admin_modal&utm_campaign=documentation&utm_content=datepicker_documentation_link">Documentation on date and time formatting</a>.</span>
 				<span class="description premium">(<?php esc_html_e( 'This is a premium feature', 'woocommerce-checkout-manager' ); ?>)</span>
 			</p>
 		</div>

@@ -8,8 +8,8 @@
 					<?php printf( esc_html__( '%s allows you to customize, add, edit and delete fields displayed on the checkout page. With the premium version you can also create conditional fields and include custom fees based on the checkout fields.', 'woocommerce-checkout-manager' ), esc_html( WOOCCM_PLUGIN_NAME ) ); ?>
 				</div>
 				<br />
-				<a class="button button-primary" target="_blank" href="<?php echo esc_url( WOOCCM_PREMIUM_SELL_URL ); ?>"><?php esc_html_e( 'Purchase Now', 'woocommerce-checkout-manager' ); ?></a>
-				<a class="button button-secondary" target="_blank" href="<?php echo esc_url( WOOCCM_SUPPORT_URL ); ?>"><?php esc_html_e( 'Get Support', 'woocommerce-checkout-manager' ); ?></a>
+				<a class="button button-primary" target="_blank" href="<?php echo esc_url( 'https://quadlayers.com/products/woocommerce-checkout-manager/?utm_source=wooccm_plugin&utm_medium=admin_tab&utm_campaign=premium_upgrade&utm_content=purchase_button' ); ?>"><?php esc_html_e( 'Purchase Now', 'woocommerce-checkout-manager' ); ?></a>
+				<a class="button button-secondary" target="_blank" href="<?php echo esc_url( 'https://quadlayers.com/account/support/?utm_source=wooccm_plugin&utm_medium=admin_tab&utm_campaign=support&utm_content=support_button' ); ?>"><?php esc_html_e( 'Get Support', 'woocommerce-checkout-manager' ); ?></a>
 				</div>
 				<hr />
 				<div class="feature-section" style="padding: 10px 0;">
