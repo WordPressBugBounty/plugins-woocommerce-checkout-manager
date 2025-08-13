@@ -64,7 +64,7 @@ class Fields_Conditional {
 					$is_woocommerce_edit_address_nonce     = isset( $_POST['woocommerce-edit-address-nonce'] ) && wp_verify_nonce( wc_clean( wp_unslash( $_POST['woocommerce-edit-address-nonce'] ) ), 'woocommerce-edit_address' );
 					// Check if is checkout or edit address page
 					if ( $is_woocommerce_process_checkout_nonce || $is_woocommerce_edit_address_nonce ) {
-						$is_valid_conditional_field = $this->is_valid_conditional_field( $_POST, $field );
+						$is_valid_conditional_field = $this->is_valid_conditional_field( $_POST, $field, $fields );
 						if ( ! $is_valid_conditional_field ) {
 							$fields[ $field['key'] ]['required'] = false;
 						}
@@ -74,7 +74,7 @@ class Fields_Conditional {
 					if ( isset( $_REQUEST['post_data'] ) ) {
 						$post_data = array();
 						parse_str( wp_unslash( $_REQUEST['post_data'] ), $post_data ); // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
-						$is_valid_conditional_field = $this->is_valid_conditional_field( $post_data, $field );
+						$is_valid_conditional_field = $this->is_valid_conditional_field( $post_data, $field, $fields );
 						if ( ! $is_valid_conditional_field ) {
 							$fields[ $field['key'] ]['required'] = false;
 						}
@@ -83,7 +83,7 @@ class Fields_Conditional {
 				case 'paypal-payments':
 					if ( isset( $GLOBALS['_POST'] ) ) {
 						$post_data                  = wp_unslash( $GLOBALS['_POST'] );
-						$is_valid_conditional_field = $this->is_valid_conditional_field( $post_data, $field );
+						$is_valid_conditional_field = $this->is_valid_conditional_field( $post_data, $field, $fields );
 						if ( ! $is_valid_conditional_field ) {
 							$fields[ $field['key'] ]['required'] = false;
 						}
@@ -95,7 +95,7 @@ class Fields_Conditional {
 		return $fields;
 	}
 
-	public function is_valid_conditional_field( $post_data, $field ) {
+	public function is_valid_conditional_field( $post_data, $field, $all_fields = array() ) {
 		/**
 		 * Don't remove field if parent doesn't exists in the current form posts
 		 */
@@ -112,14 +112,28 @@ class Fields_Conditional {
 
 		$posted_conditional_parent_value = (array) $post_data[ $field['conditional_parent_key'] ];
 		$conditional_parent_value        = (array) $field['conditional_parent_value'];
+		
 		/**
-		 * Don't remove field if conditional parent value is valid
+		 * Check if current field's parent condition is met
 		 */
-		if ( array_intersect( $conditional_parent_value, $posted_conditional_parent_value ) ) {
-			return true;
+		if ( ! array_intersect( $conditional_parent_value, $posted_conditional_parent_value ) ) {
+			return false;
 		}
 
-		return false;
+		/**
+		 * Recursively check if all ancestor fields are visible
+		 * This ensures that fields with multiple levels of conditional dependencies work correctly
+		 */
+		if ( ! empty( $all_fields ) && ! empty( $all_fields[ $field['conditional_parent_key'] ] ) ) {
+			$parent_field = $all_fields[ $field['conditional_parent_key'] ];
+			
+			// If parent is also conditional, check its visibility recursively
+			if ( ! empty( $parent_field['conditional'] ) && ! empty( $parent_field['conditional_parent_key'] ) ) {
+				return $this->is_valid_conditional_field( $post_data, $parent_field, $all_fields );
+			}
+		}
+
+		return true;
 	}
 
 	public function add_field_attributes( $field ) {
