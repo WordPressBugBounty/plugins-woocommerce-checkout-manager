@@ -112,7 +112,7 @@ class Fields_Conditional {
 
 		$posted_conditional_parent_value = (array) $post_data[ $field['conditional_parent_key'] ];
 		$conditional_parent_value        = (array) $field['conditional_parent_value'];
-		
+
 		/**
 		 * Check if current field's parent condition is met
 		 */
@@ -126,7 +126,7 @@ class Fields_Conditional {
 		 */
 		if ( ! empty( $all_fields ) && ! empty( $all_fields[ $field['conditional_parent_key'] ] ) ) {
 			$parent_field = $all_fields[ $field['conditional_parent_key'] ];
-			
+
 			// If parent is also conditional, check its visibility recursively
 			if ( ! empty( $parent_field['conditional'] ) && ! empty( $parent_field['conditional_parent_key'] ) ) {
 				return $this->is_valid_conditional_field( $post_data, $parent_field, $all_fields );

@@ -52,8 +52,9 @@ class Fields_Handler {
 
 		if ( isset( $_POST['woocommerce-process-checkout-nonce'] ) && wp_verify_nonce( wc_clean( wp_unslash( $_POST['woocommerce-process-checkout-nonce'] ) ), 'woocommerce-process_checkout' ) ) {
 
-			$fields = WC()->session->wooccm['fields'];
-			if ( count( $fields ) ) {
+			$fields = WC()->session->wooccm['fields'] ?? array();
+
+			if ( is_array( $fields ) && count( $fields ) ) {
 
 				foreach ( $fields as $key => $field ) {
 
