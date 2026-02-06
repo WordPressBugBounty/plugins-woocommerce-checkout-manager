@@ -4,12 +4,12 @@ Donate link: https://quadlayers.com/products/woocommerce-checkout-manager/
 Tags: woocommerce checkout, checkout editor, checkout fields, checkout manager, checkout field customizer
 Requires at least: 4.7
 Requires PHP: 5.6
-Tested up to: 6.8
-Stable tag: 7.7.8
+Tested up to: 6.9
+Stable tag: 7.8.6
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 WC requires at least: 4.0
-WC tested up to: 10.1
+WC tested up to: 10.4
 
 Checkout Field Manager (Checkout Manager) for WooCommerce is the most advanced plugin to customize checkout fields on your WooCommerce checkout page.
 
@@ -143,6 +143,46 @@ In the meantime, you can still use the plugin by ensuring your checkout page use
 10. Manage uploaded files in the order admin dashboard.
 
 == Changelog ==
+
+= 7.8.6 =
+* Security: CVE-2025-13930 - Fixed missing authorization to unauthenticated arbitrary attachment deletion
+* Security: Added proper order key validation for guest order attachment deletion
+* Security: Corrected inverted login check that was preventing proper authorization
+* Fix: Guest users can now delete their order attachments with proper authorization
+* Improvement: Enhanced security with timing-safe order key comparison using hash_equals()
+* Improvement: Added email verification as additional security layer for guest orders
+
+= 7.8.5 =
+* Fix: CVE-2025-13965 - Fixed WooCommerce order key check in AJAX context
+
+= 7.8.4 =
+* Fix: CVE-2025-12500 - Fixed WooCommerce availability check in AJAX context
+* Fix: File upload functionality for logged-in users restored
+* Fix: File upload functionality for guest users during checkout restored
+* Security: Improved checkout process verification using multiple validation methods
+* Security: Added cart validation check for active checkout sessions
+* Security: Added WooCommerce session validation for guest users
+* Security: Added role-based checks for logged-in users (customer, shop_manager, administrator)
+* Improvement: Optimized WooCommerce instance handling in upload process
+
+= 7.8.3 =
+* WordPress compatibility
+
+= 7.8.2 =
+* Security: Fixed CVE-2025-12500 - Unauthenticated file upload vulnerability
+* Security: Added proper authorization checks to file upload functionality
+* Security: Added WooCommerce session validation for guest checkout file uploads
+* Security: Removed unauthenticated file deletion capability
+* Security: Added file upload limits to prevent abuse
+
+= 7.8.1 =
+* Fix: WooCommerce Checkout Manager premium compatibility
+
+= 7.8.0 =
+* WooCommerce compatibility
+
+= 7.7.9 =
+* Fix: PHP 7.2 errors
 
 = 7.7.8 =
 * Fix: PHP errors

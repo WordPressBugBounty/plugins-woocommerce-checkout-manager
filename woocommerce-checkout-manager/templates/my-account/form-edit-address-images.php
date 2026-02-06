@@ -39,7 +39,9 @@ $title = get_option( 'wooccm_order_upload_files_title', esc_html__( 'Uploaded fi
 
 								$sizes = wp_get_attachment_image_src( $attachment['attachment_id'], 'full-size' );
 
-								echo esc_html( $sizes[1] . 'x' . $sizes[2] );
+								if ( is_array( $sizes ) && isset( $sizes[1], $sizes[2] ) ) {
+									echo esc_html( $sizes[1] . 'x' . $sizes[2] );
+								}
 							}
 							?>
 						</td>

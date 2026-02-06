@@ -15,7 +15,8 @@ class My_Account {
 		add_action( 'show_user_profile', array( $this, 'show_files_in_user_profile' ) );
 
 		add_action( 'wp_ajax_wooccm_customer_attachment_update', array( $this, 'ajax_delete_attachment' ) );
-		add_action( 'wp_ajax_nopriv_wooccm_customer_attachment_update', array( $this, 'ajax_delete_attachment' ) );
+		// Security Fix: CVE-2025-12500 - Removed nopriv hook to prevent unauthenticated file deletion
+		// add_action( 'wp_ajax_nopriv_wooccm_customer_attachment_update', array( $this, 'ajax_delete_attachment' ) );
 
 		add_action(
 			'woocommerce_after_edit_address_form_billing',
@@ -30,30 +31,39 @@ class My_Account {
 	}
 
 	public function ajax_delete_attachment() {
-		if ( ! empty( $_REQUEST ) && check_admin_referer( 'wooccm_upload', 'nonce' ) ) {
+		// Security Fix: CVE-2025-12500 - Added proper authorization checks
 
-			$array1 = explode( ',', sanitize_text_field( isset( $_REQUEST['all_attachments_ids'] ) ? wp_unslash( $_REQUEST['all_attachments_ids'] ) : '' ) );
-			$array2 = explode( ',', sanitize_text_field( isset( $_REQUEST['delete_attachments_ids'] ) ? wp_unslash( $_REQUEST['delete_attachments_ids'] ) : '' ) );
+		// Step 1: Verify nonce for CSRF protection
+		if ( ! check_admin_referer( 'wooccm_upload', 'nonce' ) ) {
+			wp_send_json_error( array( 'message' => esc_html__( 'Security check failed.', 'woocommerce-checkout-manager' ) ) );
+		}
 
-			if ( empty( $array1 ) || empty( $array2 ) ) {
-				wp_send_json_error( esc_html__( 'No attachment selected.', 'woocommerce-checkout-manager' ) );
-			}
+		// Step 2: Verify user is authenticated
+		if ( ! is_user_logged_in() ) {
+			wp_send_json_error( array( 'message' => esc_html__( 'You must be logged in to delete attachments.', 'woocommerce-checkout-manager' ) ) );
+		}
 
-			$attachment_ids = array_diff( $array1, $array2 );
-			if ( ! empty( $attachment_ids ) ) {
+		$array1 = explode( ',', sanitize_text_field( isset( $_REQUEST['all_attachments_ids'] ) ? wp_unslash( $_REQUEST['all_attachments_ids'] ) : '' ) );
+		$array2 = explode( ',', sanitize_text_field( isset( $_REQUEST['delete_attachments_ids'] ) ? wp_unslash( $_REQUEST['delete_attachments_ids'] ) : '' ) );
 
-				$user_id = get_current_user_id();
+		if ( empty( $array1 ) || empty( $array2 ) ) {
+			wp_send_json_error( esc_html__( 'No attachment selected.', 'woocommerce-checkout-manager' ) );
+		}
 
-				$customer_meta = get_user_meta( $user_id );
-				foreach ( $customer_meta as $key => $value ) {
-					if ( strpos( $key, 'wooccm' ) !== false ) {
-						if ( in_array( $value[0], $attachment_ids, true ) ) {
-							wp_delete_attachment( $value[0] );
-						}
+		$attachment_ids = array_diff( $array1, $array2 );
+		if ( ! empty( $attachment_ids ) ) {
+
+			$user_id = get_current_user_id();
+
+			$customer_meta = get_user_meta( $user_id );
+			foreach ( $customer_meta as $key => $value ) {
+				if ( strpos( $key, 'wooccm' ) !== false ) {
+					if ( in_array( $value[0], $attachment_ids, true ) ) {
+						wp_delete_attachment( $value[0] );
 					}
 				}
-				wp_send_json_success( 'Deleted successfully.', 'woocommerce-checkout-manager' );
 			}
+			wp_send_json_success( 'Deleted successfully.', 'woocommerce-checkout-manager' );
 		}
 	}
 

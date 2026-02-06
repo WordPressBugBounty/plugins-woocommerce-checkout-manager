@@ -78,70 +78,104 @@ class Order extends Upload {
 	}
 
 	public function ajax_order_attachment_upload() {
-		if ( ! empty( $_REQUEST ) && check_admin_referer( 'wooccm_upload', 'nonce' ) ) {
+		// Security Fix: CVE-2025-13965 - Added order key validation for guest orders
 
-			$order_id = ( isset( $_REQUEST['order_id'] ) ? absint( $_REQUEST['order_id'] ) : false );
+		// Step 1: Verify nonce for CSRF protection
+		if ( ! check_admin_referer( 'wooccm_upload', 'nonce' ) ) {
+			wp_send_json_error( array( 'message' => esc_html__( 'Security check failed.', 'woocommerce-checkout-manager' ) ) );
+		}
 
-			if ( empty( $order_id ) ) {
-				wp_send_json_error( esc_html__( 'Empty order id.', 'woocommerce-checkout-manager' ) );
+		if ( empty( $_REQUEST ) ) {
+			wp_send_json_error( array( 'message' => esc_html__( 'Invalid request.', 'woocommerce-checkout-manager' ) ) );
+		}
+
+		// Step 2: Validate order ID
+		$order_id = ( isset( $_REQUEST['order_id'] ) ? absint( $_REQUEST['order_id'] ) : false );
+
+		if ( empty( $order_id ) ) {
+			wp_send_json_error( array( 'message' => esc_html__( 'Empty order id.', 'woocommerce-checkout-manager' ) ) );
+		}
+
+		$order = wc_get_order( $order_id );
+
+		if ( ! $order ) {
+			wp_send_json_error( array( 'message' => esc_html__( 'Invalid order.', 'woocommerce-checkout-manager' ) ) );
+		}
+
+		// Step 3: Authorization check - distinguish between logged-in users and guests
+		$current_user   = wp_get_current_user();
+		$is_user_logged = 0 !== $current_user->ID;
+
+		if ( ! $is_user_logged ) {
+			// GUEST ORDER VALIDATION
+			// CRITICAL: Add order key validation for guests (CVE-2025-13965 fix)
+			// The order key is the secret token in URLs like /view-order/123/?key=wc_order_ABC123xyz
+			// This prevents attackers from uploading files to arbitrary guest orders
+			$order_key = isset( $_REQUEST['order_key'] ) ? wc_clean( wp_unslash( $_REQUEST['order_key'] ) ) : '';
+
+			if ( empty( $order_key ) ) {
+				wp_send_json_error( array( 'message' => esc_html__( 'Order key is required for guest orders.', 'woocommerce-checkout-manager' ) ) );
 			}
 
-			$order = wc_get_order( $order_id );
+			// Validate order key matches using timing-safe comparison
+			if ( ! hash_equals( $order->get_order_key(), $order_key ) ) {
+				wp_send_json_error( array( 'message' => esc_html__( 'Invalid order key.', 'woocommerce-checkout-manager' ) ) );
+			}
 
-			$current_user = wp_get_current_user();
-
+			// Defense in depth: Also verify session email matches (additional security layer)
 			$session_handler = WC()->session;
+			if ( $session_handler && ! empty( $session_handler->get( 'customer' )['email'] ) ) {
+				$order_email            = $order->get_billing_email();
+				$session_customer_email = $session_handler->get( 'customer' )['email'];
 
-			$is_user_logged = 0 !== $current_user->ID;
-
-			$order_email            = $order->get_billing_email();
-			$session_customer_email = $session_handler->get( 'customer' )['email'];
-
-			$is_session_email_equal_order_email = $order_email === $session_customer_email;
-
-			if ( ! $is_user_logged && ! $is_session_email_equal_order_email ) {
-				wp_send_json_error( esc_html__( 'You must be logged in.', 'woocommerce-checkout-manager' ) );
+				if ( $order_email !== $session_customer_email ) {
+					wp_send_json_error( array( 'message' => esc_html__( 'Email verification failed.', 'woocommerce-checkout-manager' ) ) );
+				}
 			}
-
+		} else {
+			// LOGGED-IN USER VALIDATION
 			$order_user_id = $order->get_user_id();
 
+			// Check if user has admin/shop manager capabilities
 			$user_has_capabilities = current_user_can( 'administrator' ) || current_user_can( 'edit_others_shop_orders' ) || current_user_can( 'delete_others_shop_orders' );
 
+			// Check if the logged-in user owns this order
 			$is_current_user_order_equal_user_id = $current_user->ID === $order_user_id;
 
 			if ( ! $user_has_capabilities && ! $is_current_user_order_equal_user_id ) {
-				wp_send_json_error( esc_html__( 'This is not your order.', 'woocommerce-checkout-manager' ) );
+				wp_send_json_error( array( 'message' => esc_html__( 'This is not your order.', 'woocommerce-checkout-manager' ) ) );
 			}
-
-			// It cannot be wp_unslash becouse it has images paths
-			// phpcs:ignore WordPress.Security.ValidatedSanitizedInput.MissingUnslash
-			$files = isset( $_FILES['wooccm_order_attachment_upload'] ) ? wc_clean( $_FILES['wooccm_order_attachment_upload'] ) : false;
-
-			if ( empty( $files ) ) {
-				// wc_order_notice(esc_html__('No uploads were recognized. Files were not uploaded.', 'woocommerce-checkout-manager'), 'error');
-				wp_send_json_error( esc_html__( 'No uploads were recognized. Files were not uploaded.', 'woocommerce-checkout-manager' ), 'error' );
-			}
-
-			$post = get_post( $order_id );
-			if ( ! $post ) {
-				wp_send_json_error( esc_html__( 'Invalid order id.', 'woocommerce-checkout-manager' ) );
-			}
-
-			$attachment_ids = $this->process_uploads( $files, 'wooccm_order_attachment_upload', $order_id );
-			if ( count( $attachment_ids ) ) {
-
-				ob_start();
-
-				if ( ! empty( $_REQUEST['metabox'] ) ) {
-					$this->add_metabox_content( $post );
-				} else {
-					$this->add_upload_files( $post->ID );
-				}
-
-				wp_send_json_success( ob_get_clean() );
-			}
-			wp_send_json_error( esc_html__( 'Unknown error.', 'woocommerce-checkout-manager' ) );
 		}
+
+		// Step 4: Validate files are present
+		// It cannot be wp_unslash becouse it has images paths.
+		// phpcs:ignore WordPress.Security.ValidatedSanitizedInput.MissingUnslash
+		$files = isset( $_FILES['wooccm_order_attachment_upload'] ) ? wc_clean( $_FILES['wooccm_order_attachment_upload'] ) : false;
+
+		if ( empty( $files ) ) {
+			wp_send_json_error( array( 'message' => esc_html__( 'No uploads were recognized. Files were not uploaded.', 'woocommerce-checkout-manager' ) ) );
+		}
+
+		$post = get_post( $order_id );
+		if ( ! $post ) {
+			wp_send_json_error( array( 'message' => esc_html__( 'Invalid order id.', 'woocommerce-checkout-manager' ) ) );
+		}
+
+		// Step 5: Process file uploads
+		$attachment_ids = $this->process_uploads( $files, 'wooccm_order_attachment_upload', $order_id );
+		if ( count( $attachment_ids ) ) {
+
+			ob_start();
+
+			if ( ! empty( $_REQUEST['metabox'] ) ) {
+				$this->add_metabox_content( $post );
+			} else {
+				$this->add_upload_files( $post->ID );
+			}
+
+			wp_send_json_success( ob_get_clean() );
+		}
+		wp_send_json_error( array( 'message' => esc_html__( 'Unknown error.', 'woocommerce-checkout-manager' ) ) );
 	}
 
 	public function add_upload_files( $order_id ) {

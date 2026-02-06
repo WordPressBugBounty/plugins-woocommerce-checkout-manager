@@ -20,20 +20,52 @@ if ( class_exists( 'QuadLayers\\WP_Notice_Plugin_Promote\\Load' ) ) {
 		/**
 		 * Notice cross sell 1
 		 */
-		define( 'WOOCCM_PROMOTE_CROSS_INSTALL_1_SLUG', 'woocommerce-direct-checkout' );
-		define( 'WOOCCM_PROMOTE_CROSS_INSTALL_1_NAME', 'Direct Checkout' );
-		define( 'WOOCCM_PROMOTE_CROSS_INSTALL_1_DESCRIPTION', esc_html__( 'Direct Checkout for WooCommerce allows you to reduce the steps in the checkout process by skipping the shopping cart page. This can encourage buyers to shop more and quickly. You will increase your sales reducing cart abandonment.', 'woocommerce-checkout-manager' ) );
-		define( 'WOOCCM_PROMOTE_CROSS_INSTALL_1_URL', 'https://quadlayers.com/products/woocommerce-direct-checkout/?utm_source=wooccm_plugin&utm_medium=dashboard_notice&utm_campaign=cross_sell&utm_content=direct_checkout_link' );
-		define( 'WOOCCM_PROMOTE_CROSS_INSTALL_1_LOGO_SRC', plugins_url( '/assets/backend/img/woocommerce-direct-checkout.jpg', WOOCCM_PLUGIN_FILE ) );
+		define('WOOCCM_PROMOTE_CROSS_INSTALL_1_SLUG', 'wp-whatsapp-chat');
+		define('WOOCCM_PROMOTE_CROSS_INSTALL_1_NAME', 'Social Chat');
+		define(
+			'WOOCCM_PROMOTE_CROSS_INSTALL_1_TITLE',
+			wp_kses(
+				sprintf(
+					'<h3 style="margin:0">%s</h3>',
+					esc_html__('Turn more visitors into customers.', 'woocommerce-checkout-manager')
+				),
+				array(
+					'h3' => array(
+						'style' => array()
+					)
+				)
+			)
+		);
 
+		define(
+			'WOOCCM_PROMOTE_CROSS_INSTALL_1_DESCRIPTION',
+			esc_html__('Social Chat lets users contact you on WhatsApp with one click — faster support and higher conversions.', 'woocommerce-checkout-manager')
+		);
+
+		define('WOOCCM_PROMOTE_CROSS_INSTALL_1_URL', 'https://quadlayers.com/products/whatsapp-chat/?utm_source=wooccm_plugin&utm_medium=dashboard_notice&utm_campaign=cross_sell&utm_content=social_chat_link');
+		define('WOOCCM_PROMOTE_CROSS_INSTALL_1_LOGO_SRC', plugins_url('/assets/backend/img/wp-whatsapp-chat.jpeg', WOOCCM_PLUGIN_FILE));
 		/**
 		 * Notice cross sell 2
 		 */
-		define( 'WOOCCM_PROMOTE_CROSS_INSTALL_2_SLUG', 'perfect-woocommerce-brands' );
-		define( 'WOOCCM_PROMOTE_CROSS_INSTALL_2_NAME', 'Perfect WooCommerce Brands' );
-		define( 'WOOCCM_PROMOTE_CROSS_INSTALL_2_DESCRIPTION', esc_html__( 'Perfect WooCommerce Brands the perfect tool to improve customer experience on your site. It allows you to highlight product brands and organize them in lists, dropdowns, thumbnails, and as a widget.', 'woocommerce-checkout-manager' ) );
-		define( 'WOOCCM_PROMOTE_CROSS_INSTALL_2_URL', 'https://quadlayers.com/products/perfect-woocommerce-brands/?utm_source=wooccm_plugin&utm_medium=dashboard_notice&utm_campaign=cross_sell&utm_content=perfect_brands_link' );
-		define( 'WOOCCM_PROMOTE_CROSS_INSTALL_2_LOGO_SRC', plugins_url( '/assets/backend/img/perfect-woocommerce-brands.jpg', WOOCCM_PLUGIN_FILE ) );
+		define( 'WOOCCM_PROMOTE_CROSS_INSTALL_2_SLUG', 'woocommerce-direct-checkout' );
+		define( 'WOOCCM_PROMOTE_CROSS_INSTALL_2_NAME', 'Direct Checkout' );
+		define(
+			'WOOCCM_PROMOTE_CROSS_INSTALL_2_TITLE',
+			wp_kses(
+				sprintf(
+					'<h3 style="margin:0">%s</h3>',
+					esc_html__( 'Speed up your checkout process.', 'woocommerce-checkout-manager' )
+				),
+				array(
+					'h3' => array(
+						'style' => array()
+					)
+				)
+			)
+		);
+		define( 'WOOCCM_PROMOTE_CROSS_INSTALL_2_DESCRIPTION', esc_html__( 'Reduce checkout steps by skipping the cart page. Faster purchases mean happier customers and fewer abandoned carts.', 'woocommerce-checkout-manager' ) );
+		define( 'WOOCCM_PROMOTE_CROSS_INSTALL_2_URL', 'https://quadlayers.com/products/woocommerce-direct-checkout/?utm_source=wooccm_plugin&utm_medium=dashboard_notice&utm_campaign=cross_sell&utm_content=direct_checkout_link' );
+		define( 'WOOCCM_PROMOTE_CROSS_INSTALL_2_LOGO_SRC', plugins_url( '/assets/backend/img/woocommerce-direct-checkout.jpg', WOOCCM_PLUGIN_FILE ) );
 
 		new \QuadLayers\WP_Notice_Plugin_Promote\Load(
 			WOOCCM_PLUGIN_FILE,
@@ -83,13 +115,7 @@ if ( class_exists( 'QuadLayers\\WP_Notice_Plugin_Promote\\Load' ) ) {
 					'plugin_slug'        => WOOCCM_PROMOTE_CROSS_INSTALL_1_SLUG,
 					'notice_delay'       => MONTH_IN_SECONDS * 3,
 					'notice_logo'        => WOOCCM_PROMOTE_CROSS_INSTALL_1_LOGO_SRC,
-					'notice_title'       => sprintf(
-						esc_html__(
-							'Hello! We want to invite you to try our %s plugin!',
-							'woocommerce-checkout-manager'
-						),
-						WOOCCM_PROMOTE_CROSS_INSTALL_1_NAME
-					),
+					'notice_title'       => WOOCCM_PROMOTE_CROSS_INSTALL_1_TITLE,
 					'notice_description' => WOOCCM_PROMOTE_CROSS_INSTALL_1_DESCRIPTION,
 					'notice_more_link'   => WOOCCM_PROMOTE_CROSS_INSTALL_1_URL
 				),
@@ -97,13 +123,7 @@ if ( class_exists( 'QuadLayers\\WP_Notice_Plugin_Promote\\Load' ) ) {
 					'plugin_slug'        => WOOCCM_PROMOTE_CROSS_INSTALL_2_SLUG,
 					'notice_delay'       => MONTH_IN_SECONDS * 6,
 					'notice_logo'        => WOOCCM_PROMOTE_CROSS_INSTALL_2_LOGO_SRC,
-					'notice_title'       => sprintf(
-						esc_html__(
-							'Hello! We want to invite you to try our %s plugin!',
-							'woocommerce-checkout-manager'
-						),
-						WOOCCM_PROMOTE_CROSS_INSTALL_2_NAME
-					),
+					'notice_title'       => WOOCCM_PROMOTE_CROSS_INSTALL_2_TITLE,
 					'notice_description' => WOOCCM_PROMOTE_CROSS_INSTALL_2_DESCRIPTION,
 					'notice_more_link'   => WOOCCM_PROMOTE_CROSS_INSTALL_2_URL
 				),

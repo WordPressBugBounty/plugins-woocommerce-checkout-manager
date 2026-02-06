@@ -30,7 +30,7 @@ use QuadLayers\WOOCCM\Helpers;
 				<td><?php echo wp_get_attachment_link( $attachment_id, '', false, false, preg_replace( '/\.[^.]+$/', '', $filename ) ); ?></td>
 				<td>
 					<?php
-					if ( '' == $image_attributes2[1] ) {
+					if ( ! is_array( $image_attributes2 ) || empty( $image_attributes2[1] ) ) {
 						echo '-';
 					} else {
 						echo esc_html( $image_attributes2[1] ) . ' x ' . esc_html( $image_attributes2[2] );
@@ -39,7 +39,7 @@ use QuadLayers\WOOCCM\Helpers;
 				</td>
 				<td><?php echo esc_html( strtoupper( $wp_filetype['ext'] ) ); ?></td>
 				<td class="column-actions" nowrap>
-					<!--<a href="<?php echo esc_url( $image_attributes2[0] ); ?>" target="_blank" class="button"><?php esc_html_e( 'Download', 'woocommerce-checkout-manager' ); ?></a>-->
+					<!--<a href="<?php echo is_array( $image_attributes2 ) ? esc_url( $image_attributes2[0] ) : ''; ?>" target="_blank" class="button"><?php esc_html_e( 'Download', 'woocommerce-checkout-manager' ); ?></a>-->
 					<a class="button wooccm_delete_attachment" data-attachment_id="<?php echo esc_attr( $attachment_id ); ?>" data-tip="<?php esc_html_e( 'Delete', 'woocommerce-checkout-manager' ); ?>"><?php esc_html_e( 'Delete', 'woocommerce-checkout-manager' ); ?></a>
 				</td>
 			</tr>
