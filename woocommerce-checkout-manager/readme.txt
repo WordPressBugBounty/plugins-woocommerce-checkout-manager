@@ -5,7 +5,7 @@ Tags: woocommerce checkout, checkout editor, checkout fields, checkout manager, 
 Requires at least: 4.7
 Requires PHP: 5.6
 Tested up to: 6.9
-Stable tag: 7.8.8
+Stable tag: 7.8.9
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 WC requires at least: 4.0
@@ -143,6 +143,10 @@ In the meantime, you can still use the plugin by ensuring your checkout page use
 10. Manage uploaded files in the order admin dashboard.
 
 == Changelog ==
+
+= 7.8.9 =
+* Fix: prevent infinite loop on shop_order list page caused by recursive parse_query
+* Fix: select field placeholder option no longer stays selected when a valid value exists
 
 = 7.8.8 =
 * fix: woocommerce compatibility

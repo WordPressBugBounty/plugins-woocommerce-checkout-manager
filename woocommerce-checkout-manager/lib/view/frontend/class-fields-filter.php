@@ -113,7 +113,8 @@ class Fields_Filter {
 				if ( ! empty( $args['options'] ) ) {
 					$field .= '<select name="' . esc_attr( $key ) . '" id="' . esc_attr( $args['id'] ) . '" class="select ' . esc_attr( implode( ' ', $args['input_class'] ) ) . '" ' . implode( ' ', $custom_attributes ) . ' data-placeholder="' . esc_attr( $args['placeholder'] ) . '">';
 					if ( ! empty( $args['placeholder'] ) ) {
-						$field .= '<option value="" disabled="disabled" selected="selected">' . esc_attr( $args['placeholder'] ) . '</option>';
+						$selected = empty( $value ) ? ' selected="selected"' : '';
+						$field   .= '<option value="" disabled="disabled"' . $selected . '>' . esc_attr( $args['placeholder'] ) . '</option>';
 					}
 					foreach ( $args['options'] as $option_key => $option_text ) {
 						$option_key = is_numeric( $option_key ) ? $option_text : $option_key;

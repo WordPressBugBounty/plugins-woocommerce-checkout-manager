@@ -131,8 +131,13 @@ class Model {
 		}
 
 		if ( ! isset( $this->cache[ $this->table ] ) ) {
-			$this->cache[ $this->table ] = get_option( $this->table, $this->get_defaults() );
-
+			/**
+			 * Fix: avoid passing get_defaults() as an eager argument to get_option().
+			 * When get_defaults() triggers WP_Query (via is_checkout_block_default()),
+			 * parse_query fires again before the cache is set, creating infinite recursion.
+			 */
+			$option                      = get_option( $this->table );
+			$this->cache[ $this->table ] = ( false === $option ) ? $this->get_defaults() : $option;
 		}
 
 		return $this->cache[ $this->table ];
