@@ -22,7 +22,7 @@ final class Plugin {
 		/**
 		 * Load plugin textdomain
 		 */
-		add_action( 'init', array( $this, 'load_textdomain' ) );
+		add_action( 'init', array( $this, 'load_textdomain' ), 1 );
 
 		/**
 		 * Load plugin on woocommerce_init
@@ -66,7 +66,7 @@ final class Plugin {
 	}
 
 	public function load_textdomain() {
-		load_plugin_textdomain( 'woocommerce-checkout-manager', false, WOOCCM_PLUGIN_DIR . '/languages/' );
+		load_plugin_textdomain( 'woocommerce-checkout-manager', false, dirname( WOOCCM_PLUGIN_BASENAME ) . '/languages' );
 	}
 
 	public function register_scripts() {
