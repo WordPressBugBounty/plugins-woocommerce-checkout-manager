@@ -401,12 +401,12 @@
             "version_normalized": "2.0.7.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/quadlayers/wp-notice-plugin-required.git",
+                "url": "https://github.com/franmastromarino/wp-notice-plugin-required.git",
                 "reference": "fd3d10dbdb39be738c3ef320e43cb7cd4e59e071"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/quadlayers/wp-notice-plugin-required/zipball/fd3d10dbdb39be738c3ef320e43cb7cd4e59e071",
+                "url": "https://api.github.com/repos/franmastromarino/wp-notice-plugin-required/zipball/fd3d10dbdb39be738c3ef320e43cb7cd4e59e071",
                 "reference": "fd3d10dbdb39be738c3ef320e43cb7cd4e59e071",
                 "shasum": ""
             },
@@ -445,8 +445,8 @@
                 "wordpress"
             ],
             "support": {
-                "issues": "https://github.com/quadlayers/wp-notice-plugin-required/issues",
-                "source": "https://github.com/quadlayers/wp-notice-plugin-required/tree/2.0.7"
+                "issues": "https://github.com/franmastromarino/wp-notice-plugin-required/issues",
+                "source": "https://github.com/franmastromarino/wp-notice-plugin-required/tree/2.0.7"
             },
             "install-path": "../../jetpack_vendor/quadlayers/wp-notice-plugin-required"
         },
