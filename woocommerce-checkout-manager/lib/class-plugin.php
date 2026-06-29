@@ -174,10 +174,15 @@ final class Plugin {
 			}
 		</style>
 		<script>
-			const fields = document.querySelectorAll('.wooccm-premium-field')
-			Array.from(fields).forEach((field) => {
-				field.closest('tr')?.classList.add('wooccm-premium-field');
-			})
+			( function () {
+				const wooccmPremiumFields = document.querySelectorAll( '.wooccm-premium-field' );
+				wooccmPremiumFields.forEach( function ( field ) {
+					const row = field.closest( 'tr' );
+					if ( row ) {
+						row.classList.add( 'wooccm-premium-field' );
+					}
+				} );
+			} )();
 		</script>
 		<?php
 	}
