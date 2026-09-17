@@ -8,6 +8,10 @@ return array(
       'path' => 'jetpack_vendor/automattic/jetpack-assets',
       'ver' => '4.4.11',
     ),
+    'jetpack-ip' => array(
+      'path' => 'jetpack_vendor/automattic/jetpack-ip',
+      'ver' => '0.5.0',
+    ),
     'wp-dashboard-widget-news' => array(
       'path' => 'jetpack_vendor/quadlayers/wp-dashboard-widget-news',
       'ver' => '1.0.9',

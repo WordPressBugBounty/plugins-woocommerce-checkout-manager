@@ -16,6 +16,7 @@ return array(
     'Automattic\\Jetpack\\CookieState' => $baseDir . '/jetpack_vendor/automattic/jetpack-status/src/class-cookiestate.php',
     'Automattic\\Jetpack\\Errors' => $baseDir . '/jetpack_vendor/automattic/jetpack-status/src/class-errors.php',
     'Automattic\\Jetpack\\Files' => $baseDir . '/jetpack_vendor/automattic/jetpack-status/src/class-files.php',
+    'Automattic\\Jetpack\\IP\\Utils' => $baseDir . '/jetpack_vendor/automattic/jetpack-ip/src/class-utils.php',
     'Automattic\\Jetpack\\Modules' => $baseDir . '/jetpack_vendor/automattic/jetpack-status/src/class-modules.php',
     'Automattic\\Jetpack\\Paths' => $baseDir . '/jetpack_vendor/automattic/jetpack-status/src/class-paths.php',
     'Automattic\\Jetpack\\Status' => $baseDir . '/jetpack_vendor/automattic/jetpack-status/src/class-status.php',

@@ -5,7 +5,7 @@ Tags: woocommerce checkout, checkout editor, checkout fields, checkout manager, 
 Requires at least: 4.7
 Requires PHP: 5.6
 Tested up to: 7.1
-Stable tag: 7.9.6
+Stable tag: 7.9.7
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 WC requires at least: 4.0
@@ -142,7 +142,16 @@ In the meantime, you can still use the plugin by ensuring your checkout page use
 9. Show/hide fields based on cart contents.
 10. Manage uploaded files in the order admin dashboard.
 
+== Source Code ==
+
+The compiled assets of the bundled `franmastromarino/wp-plugin-feedback` library are built from its public repository: https://github.com/franmastromarino/wp-plugin-feedback
+
 == Changelog ==
+
+= 7.9.7 =
+* fix: security, missing authorization allowed authenticated customers to delete arbitrary media attachments through the checkout file field attachment IDs (CVE-2026-17031). Reported by @nacento (Wordfence) and PO-WEI TING (WPScan)
+* fix: security, missing authorization allowed authenticated customers to delete arbitrary media attachments through the customer address file fields. Reported by Md. Moniruzzaman Prodhan (WPScan)
+* fix: WordPress coding standards
 
 = 7.9.6 =
 * fix: WooCommerce and WordPress compatibility

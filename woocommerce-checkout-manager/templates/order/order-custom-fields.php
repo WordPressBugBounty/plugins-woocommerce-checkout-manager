@@ -5,7 +5,7 @@ $title = get_option( 'wooccm_order_custom_fields_title', esc_html__( 'Order extr
 ?>
 
 <h2 class="woocommerce-order-details__title">
-	<?php esc_html_e( $title ); ?>
+	<?php echo esc_html( $title ); ?>
 </h2>
 <table class="woocommerce-table shop_table order_details">
 	<tbody>

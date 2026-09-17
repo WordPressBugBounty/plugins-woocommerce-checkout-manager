@@ -130,7 +130,8 @@ class Fields_I18n {
 			return pll__( $string );
 		}
 
-		// phpcs:ignore WordPress.WP.I18n.NonSingularStringLiteralText
+		// Dynamic strings are translated with the WooCommerce text domain to reuse its translations of the default checkout fields.
+		// phpcs:ignore WordPress.WP.I18n.NonSingularStringLiteralText, WordPress.WP.I18n.TextDomainMismatch
 		return __( $string, 'woocommerce' );
 	}
 

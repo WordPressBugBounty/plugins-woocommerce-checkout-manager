@@ -5,7 +5,7 @@ $title = get_option( 'wooccm_order_upload_files_title', esc_html__( 'Uploaded fi
 
 <div class="wooccm_customer_attachments_wrapper">
 	<h2 class="woocommerce-order-details__title">
-		<?php esc_html_e( $title ); ?>
+		<?php echo esc_html( $title ); ?>
 	</h2>
 	<table class="woocommerce_order_items shop_table" style="width: 100% !important;">
 		<thead>
