@@ -85,7 +85,7 @@ final class Plugin {
 			'wooccm-frontend-js',
 			'wooccm_upload',
 			array(
-				'ajax_url' => admin_url( 'admin-ajax.php' ),
+				'ajax_url' => admin_url( 'admin-ajax.php' . ( is_admin() ? '?metabox=1' : '' ) ),
 				'nonce'    => wp_create_nonce( 'wooccm_upload' ),
 				'icons'    => array(
 					'interactive' => site_url( 'wp-includes/images/media/interactive.png' ),

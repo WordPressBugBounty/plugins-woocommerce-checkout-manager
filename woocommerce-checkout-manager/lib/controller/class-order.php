@@ -167,7 +167,7 @@ class Order extends Upload {
 
 			ob_start();
 
-			if ( ! empty( $_REQUEST['metabox'] ) ) {
+			if ( ! empty( $_REQUEST['metabox'] ) && current_user_can( 'edit_shop_orders' ) ) {
 				$this->add_metabox_content( $post );
 			} else {
 				$this->add_upload_files( $post->ID );

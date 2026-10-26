@@ -5,7 +5,7 @@ Tags: woocommerce checkout, checkout editor, checkout fields, checkout manager, 
 Requires at least: 4.7
 Requires PHP: 5.6
 Tested up to: 7.1
-Stable tag: 7.9.8
+Stable tag: 7.9.9
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 WC requires at least: 4.0
@@ -147,6 +147,9 @@ In the meantime, you can still use the plugin by ensuring your checkout page use
 The compiled assets of the bundled `franmastromarino/wp-plugin-feedback` library are built from its public repository: https://github.com/franmastromarino/wp-plugin-feedback
 
 == Changelog ==
+
+= 7.9.9 =
+* fix: uploaded files not displayed in the admin order "Order Files" metabox until the page was refreshed
 
 = 7.9.8 =
 * WooCommerce 11.1 compatibility
