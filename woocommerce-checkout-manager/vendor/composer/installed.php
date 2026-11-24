@@ -1,9 +1,9 @@
 <?php return array(
     'root' => array(
         'name' => 'quadlayers/woocommerce-checkout-manager',
-        'pretty_version' => 'v7.9.9',
-        'version' => '7.9.9.0',
-        'reference' => '011bd71e9d5ef900a21e2c10821b40c10dff2cc0',
+        'pretty_version' => 'v7.9.10',
+        'version' => '7.9.10.0',
+        'reference' => '3a53b7151cf6fafe1c019b8667565e4d550289bb',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -65,9 +65,9 @@
             'dev_requirement' => false,
         ),
         'quadlayers/woocommerce-checkout-manager' => array(
-            'pretty_version' => 'v7.9.9',
-            'version' => '7.9.9.0',
-            'reference' => '011bd71e9d5ef900a21e2c10821b40c10dff2cc0',
+            'pretty_version' => 'v7.9.10',
+            'version' => '7.9.10.0',
+            'reference' => '3a53b7151cf6fafe1c019b8667565e4d550289bb',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
